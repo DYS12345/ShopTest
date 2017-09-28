@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="17A264c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ThemeViewController">
+            <connections>
+                <outlet property="balckBtn" destination="AtZ-Sy-y2Z" id="XRH-N0-2xZ"/>
+                <outlet property="goldBtn" destination="2bq-kN-Xdx" id="6qL-iJ-XcP"/>
+                <outlet property="redBtn" destination="Hhb-vT-HGA" id="5qs-GV-YZA"/>
+                <outlet property="rwBtn" destination="drQ-Qd-zKd" id="BoI-qA-IwD"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="109"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AtZ-Sy-y2Z">
+                    <rect key="frame" x="0.0" y="0.0" width="98.5" height="109"/>
+                    <state key="normal" image="TCBlack"/>
+                    <state key="selected" image="TCBlackSelected"/>
+                    <connections>
+                        <action selector="black:" destination="-1" eventType="touchUpInside" id="AuQ-Pc-x0W"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hhb-vT-HGA">
+                    <rect key="frame" x="98.5" y="0.0" width="98" height="109"/>
+                    <state key="normal" image="TCred"/>
+                    <state key="selected" image="TCredSelected"/>
+                    <connections>
+                        <action selector="red:" destination="-1" eventType="touchUpInside" id="hny-Sc-dYP"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="drQ-Qd-zKd">
+                    <rect key="frame" x="196.5" y="0.0" width="98.5" height="109"/>
+                    <state key="normal" image="TCRW"/>
+                    <state key="selected" image="TCRWSelected"/>
+                    <connections>
+                        <action selector="rw:" destination="-1" eventType="touchUpInside" id="C5b-1S-n2c"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2bq-kN-Xdx">
+                    <rect key="frame" x="295" y="0.0" width="98" height="109"/>
+                    <state key="normal" image="TCGolden"/>
+                    <state key="selected" image="TCGoldenSelected"/>
+                    <connections>
+                        <action selector="gold:" destination="-1" eventType="touchUpInside" id="utp-Dv-jWS"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="AtZ-Sy-y2Z" secondAttribute="bottom" id="13G-ME-uOe"/>
+                <constraint firstItem="drQ-Qd-zKd" firstAttribute="leading" secondItem="Hhb-vT-HGA" secondAttribute="trailing" id="6kW-Cr-YFw"/>
+                <constraint firstItem="Hhb-vT-HGA" firstAttribute="height" secondItem="AtZ-Sy-y2Z" secondAttribute="height" id="8Qv-Zw-cdu"/>
+                <constraint firstAttribute="trailing" secondItem="2bq-kN-Xdx" secondAttribute="trailing" id="8m6-eG-abZ"/>
+                <constraint firstAttribute="bottom" secondItem="drQ-Qd-zKd" secondAttribute="bottom" id="Cec-6x-J1O"/>
+                <constraint firstItem="drQ-Qd-zKd" firstAttribute="height" secondItem="AtZ-Sy-y2Z" secondAttribute="height" id="Msp-Ap-zgD"/>
+                <constraint firstItem="2bq-kN-Xdx" firstAttribute="leading" secondItem="drQ-Qd-zKd" secondAttribute="trailing" id="Onj-8A-ZjJ"/>
+                <constraint firstItem="Hhb-vT-HGA" firstAttribute="width" secondItem="AtZ-Sy-y2Z" secondAttribute="width" id="P8C-QY-xzo"/>
+                <constraint firstItem="2bq-kN-Xdx" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="XNQ-Ft-5mm"/>
+                <constraint firstAttribute="bottom" secondItem="Hhb-vT-HGA" secondAttribute="bottom" id="YIW-YW-srd"/>
+                <constraint firstItem="2bq-kN-Xdx" firstAttribute="height" secondItem="AtZ-Sy-y2Z" secondAttribute="height" id="YLc-c4-Wva"/>
+                <constraint firstItem="AtZ-Sy-y2Z" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="aM5-r2-Hjy"/>
+                <constraint firstItem="drQ-Qd-zKd" firstAttribute="width" secondItem="AtZ-Sy-y2Z" secondAttribute="width" id="aRF-xF-qQd"/>
+                <constraint firstItem="AtZ-Sy-y2Z" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="h1y-Q2-DiO"/>
+                <constraint firstItem="2bq-kN-Xdx" firstAttribute="width" secondItem="AtZ-Sy-y2Z" secondAttribute="width" id="iU6-Zm-28e"/>
+                <constraint firstAttribute="bottom" secondItem="2bq-kN-Xdx" secondAttribute="bottom" id="mYi-gm-Qzw"/>
+                <constraint firstItem="Hhb-vT-HGA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="vcd-3m-jM3"/>
+                <constraint firstItem="drQ-Qd-zKd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="wEf-4j-Owv"/>
+                <constraint firstItem="Hhb-vT-HGA" firstAttribute="leading" secondItem="AtZ-Sy-y2Z" secondAttribute="trailing" id="wy3-hL-jWU"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="42.5" y="-225.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="TCBlack" width="21" height="21"/>
+        <image name="TCBlackSelected" width="25" height="25"/>
+        <image name="TCGolden" width="21" height="21"/>
+        <image name="TCGoldenSelected" width="25" height="25"/>
+        <image name="TCRW" width="21" height="21"/>
+        <image name="TCRWSelected" width="25" height="25"/>
+        <image name="TCred" width="21" height="21"/>
+        <image name="TCredSelected" width="25" height="25"/>
+    </resources>
+</document>

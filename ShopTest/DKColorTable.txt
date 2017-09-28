@@ -1,0 +1,10 @@
+normal   hongbai  hong     jin
+#000000  #ffffff  #ffffff  #ffffff BG
+#000000  #ffffff  #F05958  #ffffff naviBarViewBG
+#ffffff  #000000  #000000  #000000 GoodsTEXT
+#be8914  #F05958  #F05958  #BE8914 priceText
+#666666  #666666  #666666  #666666 btnNormal
+#BE8914  #F05958  #F05958  #BE8914 btnSelected
+#4D4D4D  #F5F5F5  #F37A79  #F5F5F5 searchViewBG
+
+  

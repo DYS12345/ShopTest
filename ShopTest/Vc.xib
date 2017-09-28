@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="17A264c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Vc">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DNg-rR-6rS">
+                    <rect key="frame" x="334" y="240" width="100" height="86"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="0bg-dg-fEi"/>
+                        <constraint firstAttribute="height" constant="86" id="PeB-6l-sOQ"/>
+                    </constraints>
+                    <state key="normal" title="登录"/>
+                    <connections>
+                        <action selector="login:" destination="-1" eventType="touchUpInside" id="V9V-hx-Wii"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="db9-Hv-OrK">
+                    <rect key="frame" x="343" y="435" width="100" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="IhD-U0-swz"/>
+                        <constraint firstAttribute="height" constant="80" id="ggB-hm-6wG"/>
+                    </constraints>
+                    <state key="normal" title="商品"/>
+                    <connections>
+                        <action selector="goods:" destination="-1" eventType="touchUpInside" id="Nni-ou-ckW"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="DNg-rR-6rS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="240" id="7EB-mv-3Vm"/>
+                <constraint firstItem="DNg-rR-6rS" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Jsa-ad-iY8"/>
+                <constraint firstItem="db9-Hv-OrK" firstAttribute="top" secondItem="DNg-rR-6rS" secondAttribute="bottom" constant="123" id="cwi-tL-7kO"/>
+                <constraint firstItem="db9-Hv-OrK" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="dQm-fz-EYF"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

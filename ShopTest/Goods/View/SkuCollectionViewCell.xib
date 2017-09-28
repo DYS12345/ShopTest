@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="17A264c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SkuCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="237" height="74"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="237" height="74"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zfE-E2-XeD">
+                        <rect key="frame" x="0.0" y="0.0" width="237" height="74"/>
+                    </button>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="zfE-E2-XeD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="2D0-MD-QKn"/>
+                <constraint firstAttribute="trailing" secondItem="zfE-E2-XeD" secondAttribute="trailing" id="N1G-WH-7VY"/>
+                <constraint firstItem="zfE-E2-XeD" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="T4I-Wp-b6B"/>
+                <constraint firstAttribute="bottom" secondItem="zfE-E2-XeD" secondAttribute="bottom" id="tRl-x0-Sn2"/>
+            </constraints>
+            <size key="customSize" width="237" height="74"/>
+            <connections>
+                <outlet property="btn" destination="zfE-E2-XeD" id="OME-Pw-a6m"/>
+            </connections>
+            <point key="canvasLocation" x="127.5" y="66"/>
+        </collectionViewCell>
+    </objects>
+</document>
