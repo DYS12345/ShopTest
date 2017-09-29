@@ -81,6 +81,9 @@
 		F5A53C1E1F5E36BE00DAECC5 /* PaymentCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5A53C1C1F5E36BD00DAECC5 /* PaymentCodeViewController.xib */; };
 		F5A53C221F5E40D300DAECC5 /* KuaiDiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A53C201F5E40D300DAECC5 /* KuaiDiViewController.m */; };
 		F5A53C231F5E40D300DAECC5 /* KuaiDiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5A53C211F5E40D300DAECC5 /* KuaiDiViewController.xib */; };
+		F5A9818B1F7E288300A18EC9 /* DongApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A9818A1F7E288200A18EC9 /* DongApplication.m */; };
+		F5A9818F1F7E2BA400A18EC9 /* ShowPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A9818D1F7E2BA400A18EC9 /* ShowPictureViewController.m */; };
+		F5A981901F7E2BA400A18EC9 /* ShowPictureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5A9818E1F7E2BA400A18EC9 /* ShowPictureViewController.xib */; };
 		F5CC32031F67B03D006F03F2 /* DKColorTable.txt in Resources */ = {isa = PBXBuildFile; fileRef = F5CC32021F67B03D006F03F2 /* DKColorTable.txt */; };
 		F5D326A01F5E8DEF004A0C78 /* THNChooseCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D3269F1F5E8DEF004A0C78 /* THNChooseCityViewController.m */; };
 		F5D326A31F5E8F50004A0C78 /* THNProvinceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D326A21F5E8F50004A0C78 /* THNProvinceModel.m */; };
@@ -224,6 +227,11 @@
 		F5A53C1F1F5E40D300DAECC5 /* KuaiDiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KuaiDiViewController.h; sourceTree = "<group>"; };
 		F5A53C201F5E40D300DAECC5 /* KuaiDiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KuaiDiViewController.m; sourceTree = "<group>"; };
 		F5A53C211F5E40D300DAECC5 /* KuaiDiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KuaiDiViewController.xib; sourceTree = "<group>"; };
+		F5A981891F7E288200A18EC9 /* DongApplication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DongApplication.h; sourceTree = "<group>"; };
+		F5A9818A1F7E288200A18EC9 /* DongApplication.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DongApplication.m; sourceTree = "<group>"; };
+		F5A9818C1F7E2BA400A18EC9 /* ShowPictureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowPictureViewController.h; sourceTree = "<group>"; };
+		F5A9818D1F7E2BA400A18EC9 /* ShowPictureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowPictureViewController.m; sourceTree = "<group>"; };
+		F5A9818E1F7E2BA400A18EC9 /* ShowPictureViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowPictureViewController.xib; sourceTree = "<group>"; };
 		F5CC32021F67B03D006F03F2 /* DKColorTable.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DKColorTable.txt; sourceTree = "<group>"; };
 		F5D3269E1F5E8DEF004A0C78 /* THNChooseCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THNChooseCityViewController.h; sourceTree = "<group>"; };
 		F5D3269F1F5E8DEF004A0C78 /* THNChooseCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THNChooseCityViewController.m; sourceTree = "<group>"; };
@@ -325,6 +333,8 @@
 				F5CC32021F67B03D006F03F2 /* DKColorTable.txt */,
 				F51A420E1F565EE400D73497 /* AppDelegate.h */,
 				F51A420F1F565EE400D73497 /* AppDelegate.m */,
+				F5A981891F7E288200A18EC9 /* DongApplication.h */,
+				F5A9818A1F7E288200A18EC9 /* DongApplication.m */,
 				F56468AE1F56A0E000C728E8 /* Vc.h */,
 				F56468AF1F56A0E000C728E8 /* Vc.m */,
 				F56468B01F56A0E000C728E8 /* Vc.xib */,
@@ -332,6 +342,9 @@
 				F51A42191F565EE400D73497 /* LaunchScreen.storyboard */,
 				F51A421C1F565EE400D73497 /* Info.plist */,
 				F51A420B1F565EE400D73497 /* Supporting Files */,
+				F5A9818C1F7E2BA400A18EC9 /* ShowPictureViewController.h */,
+				F5A9818D1F7E2BA400A18EC9 /* ShowPictureViewController.m */,
+				F5A9818E1F7E2BA400A18EC9 /* ShowPictureViewController.xib */,
 			);
 			path = ShopTest;
 			sourceTree = "<group>";
@@ -687,8 +700,9 @@
 				TargetAttributes = {
 					F51A42071F565EE400D73497 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = QNKEA2Q4R9;
 						LastSwiftMigration = 0830;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -729,6 +743,7 @@
 				F56B4A9C1F6D4DC2003B9E73 /* HistoryTopTableViewCell.xib in Resources */,
 				F51A42181F565EE400D73497 /* Assets.xcassets in Resources */,
 				F5CC32031F67B03D006F03F2 /* DKColorTable.txt in Resources */,
+				F5A981901F7E2BA400A18EC9 /* ShowPictureViewController.xib in Resources */,
 				F56B4BA81F7267F9003B9E73 /* OrderZiTiViewController.xib in Resources */,
 				F55C91AC1F6908A500A35457 /* ThemeViewController.xib in Resources */,
 				48BE56811F7395EC00455B0C /* OrderTableViewCell.xib in Resources */,
@@ -811,6 +826,7 @@
 				F56CDAFF1F7501A100238750 /* OrderDetailModel.m in Sources */,
 				F5F834EC1F6BD3EA000480DA /* SearchHistoryModel.m in Sources */,
 				F5A53BF71F57F0C400DAECC5 /* RowsModel.m in Sources */,
+				F5A9818F1F7E2BA400A18EC9 /* ShowPictureViewController.m in Sources */,
 				F5A53C111F59764600DAECC5 /* OderInfoViewController.m in Sources */,
 				F56B4B261F6F9BAD003B9E73 /* LayoutAttributeTools.m in Sources */,
 				F55C91AB1F6908A500A35457 /* ThemeViewController.m in Sources */,
@@ -835,6 +851,7 @@
 				F5D326A01F5E8DEF004A0C78 /* THNChooseCityViewController.m in Sources */,
 				F56B4B2A1F6F9BAD003B9E73 /* LeftAlignedFlowLayout.m in Sources */,
 				F5A53BFC1F57F55000DAECC5 /* GoodsCollectionViewCell.m in Sources */,
+				F5A9818B1F7E288300A18EC9 /* DongApplication.m in Sources */,
 				48BE56801F7395EC00455B0C /* OrderTableViewCell.m in Sources */,
 				F5A53C1D1F5E36BE00DAECC5 /* PaymentCodeViewController.m in Sources */,
 				F5F834DF1F6B86D9000480DA /* SearchExpandedTableViewCell.m in Sources */,
@@ -975,12 +992,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = QNKEA2Q4R9;
 				INFOPLIST_FILE = ShopTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.taihuoniao.d3inp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.taihuoniao.d3in;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -998,12 +1016,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = QNKEA2Q4R9;
 				INFOPLIST_FILE = ShopTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.taihuoniao.d3inp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.taihuoniao.d3in;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ShopTest/ShopTest-Bridging-Header.h";
@@ -1063,16 +1082,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: TaiHuoniao(SHENZHEN) Science and Technology Company Limited (7ET6PJMCHV)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 7ET6PJMCHV;
+				DEVELOPMENT_TEAM = QNKEA2Q4R9;
 				INFOPLIST_FILE = ShopTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.taihuoniao.d3inp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.taihuoniao.d3in;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1cf41cb9-bca8-4996-9785-e75af85e67ee";
-				PROVISIONING_PROFILE_SPECIFIER = d3inP;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ShopTest/ShopTest-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 2;

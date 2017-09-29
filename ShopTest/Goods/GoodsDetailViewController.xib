@@ -81,18 +81,6 @@
                                 <action selector="buy:" destination="-1" eventType="touchUpInside" id="QhW-cL-fbp"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pA1-Ta-Hwo">
-                            <rect key="frame" x="914" y="75" width="90" height="30"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="90" id="iZr-hV-xr3"/>
-                                <constraint firstAttribute="height" constant="30" id="qkp-eQ-Jaq"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                            <state key="normal" title="关闭"/>
-                            <connections>
-                                <action selector="close:" destination="-1" eventType="touchUpInside" id="49Q-9D-Lwq"/>
-                            </connections>
-                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -100,7 +88,6 @@
                         <constraint firstItem="aYL-lc-2pg" firstAttribute="top" secondItem="fXc-5T-Jvu" secondAttribute="top" constant="36" id="6hU-ny-h8I"/>
                         <constraint firstItem="gOp-1o-9eM" firstAttribute="leading" secondItem="PB5-PN-Sv0" secondAttribute="trailing" constant="17" id="AWZ-NM-48A"/>
                         <constraint firstItem="PB5-PN-Sv0" firstAttribute="top" secondItem="fXc-5T-Jvu" secondAttribute="top" constant="14" id="AsU-Yr-NzK"/>
-                        <constraint firstItem="pA1-Ta-Hwo" firstAttribute="bottom" secondItem="gOp-1o-9eM" secondAttribute="bottom" id="GJh-Tu-SsP"/>
                         <constraint firstItem="aYL-lc-2pg" firstAttribute="leading" secondItem="th7-l5-lae" secondAttribute="trailing" constant="10" id="HGB-X0-jkL"/>
                         <constraint firstItem="th7-l5-lae" firstAttribute="top" secondItem="fXc-5T-Jvu" secondAttribute="top" constant="14" id="OZ8-UU-xLX"/>
                         <constraint firstItem="YUJ-Nd-TB1" firstAttribute="leading" secondItem="fXc-5T-Jvu" secondAttribute="leading" constant="145" id="bVa-3z-sMk"/>
@@ -111,7 +98,6 @@
                         <constraint firstAttribute="bottom" secondItem="gOp-1o-9eM" secondAttribute="bottom" constant="20" id="pIi-Ps-vlS"/>
                         <constraint firstItem="JK0-R4-RHq" firstAttribute="leading" secondItem="YUJ-Nd-TB1" secondAttribute="leading" id="sPJ-f4-p0P"/>
                         <constraint firstAttribute="bottom" secondItem="JK0-R4-RHq" secondAttribute="bottom" constant="20" id="tjP-AC-gLU"/>
-                        <constraint firstAttribute="trailing" secondItem="pA1-Ta-Hwo" secondAttribute="trailing" constant="20" id="yIq-h4-lob"/>
                         <constraint firstAttribute="trailing" secondItem="PB5-PN-Sv0" secondAttribute="trailing" constant="316" id="yaC-9y-0M1"/>
                         <constraint firstItem="YUJ-Nd-TB1" firstAttribute="top" secondItem="fXc-5T-Jvu" secondAttribute="top" constant="12" id="zW3-4G-TOa"/>
                     </constraints>
@@ -136,11 +122,25 @@
                     <color key="textColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pA1-Ta-Hwo">
+                    <rect key="frame" x="904" y="30" width="90" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="90" id="iZr-hV-xr3"/>
+                        <constraint firstAttribute="height" constant="30" id="qkp-eQ-Jaq"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="关闭"/>
+                    <connections>
+                        <action selector="close:" destination="-1" eventType="touchUpInside" id="49Q-9D-Lwq"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="2qb-cq-Xm5" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="FZD-gs-0up"/>
                 <constraint firstItem="fXc-5T-Jvu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="GbA-c5-o2I"/>
+                <constraint firstAttribute="trailing" secondItem="pA1-Ta-Hwo" secondAttribute="trailing" constant="30" id="K2j-Ec-irW"/>
+                <constraint firstItem="pA1-Ta-Hwo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="MrP-4b-zRa"/>
                 <constraint firstItem="HVR-GN-ffw" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="RSb-wU-utc"/>
                 <constraint firstItem="txQ-B3-uwr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Vyy-ZO-1da"/>
                 <constraint firstAttribute="trailing" secondItem="fXc-5T-Jvu" secondAttribute="trailing" id="Wny-dr-Q4d"/>

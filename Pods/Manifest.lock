@@ -1,5 +1,4 @@
 PODS:
-  - ActionSheetPicker-3.0 (2.2.0)
   - AFNetworking (3.1.0):
     - AFNetworking/NSURLSession (= 3.1.0)
     - AFNetworking/Reachability (= 3.1.0)
@@ -40,13 +39,14 @@ PODS:
   - Masonry (1.0.2)
   - MJExtension (3.0.13)
   - MJRefresh (3.1.12)
-  - SDWebImage (3.8.2):
-    - SDWebImage/Core (= 3.8.2)
-  - SDWebImage/Core (3.8.2)
+  - SDCycleScrollView (1.73):
+    - SDWebImage (~> 4.0.0)
+  - SDWebImage (4.0.0):
+    - SDWebImage/Core (= 4.0.0)
+  - SDWebImage/Core (4.0.0)
   - SVProgressHUD (2.1.2)
 
 DEPENDENCIES:
-  - ActionSheetPicker-3.0
   - AFNetworking (~> 3.0)
   - Charts
   - DKNightVersion
@@ -55,7 +55,8 @@ DEPENDENCIES:
   - Masonry
   - MJExtension
   - MJRefresh
-  - SDWebImage (~> 3.8)
+  - SDCycleScrollView (~> 1.66)
+  - SDWebImage (~> 4.0.0)
   - SVProgressHUD (from `https://github.com/SVProgressHUD/SVProgressHUD.git`)
 
 EXTERNAL SOURCES:
@@ -68,7 +69,6 @@ CHECKOUT OPTIONS:
     :git: https://github.com/SVProgressHUD/SVProgressHUD.git
 
 SPEC CHECKSUMS:
-  ActionSheetPicker-3.0: d11a4c12c6aaf704b8a3f56d179198c99f3e41e6
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   Charts: 236d6ccdd0ce6feae151d89e829a7397381a21fd
   DKNightVersion: eaa80cc4014b4bae7d4b535fd87ecc6a3c2767b3
@@ -78,9 +78,10 @@ SPEC CHECKSUMS:
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
-  SDWebImage: '098e97e6176540799c27e804c96653ee0833d13c'
+  SDCycleScrollView: d0fd5fe40a80918371fd8939214eb3be81033d83
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SVProgressHUD: d65371a8e4482380deddb9fe60e14e59ddb30eb3
 
-PODFILE CHECKSUM: f34a75ed37580003d15d27aed6867ac0522fa8e6
+PODFILE CHECKSUM: 737841d0bf9af3b3fbe5653a19d3403ad8816627
 
 COCOAPODS: 1.2.1

@@ -89,6 +89,7 @@ static NSString * const XMGPlacerholderColorKeyPath = @"_placeholderLabel.textCo
 }
 
 - (IBAction)login:(id)sender {
+    [SVProgressHUD showWithMaskType:(SVProgressHUDMaskTypeClear)];
     if (self.userNameTF.text.length == 0) {
         [SVProgressHUD showInfoWithStatus:@"账号未填写"];
     } else if (self.psdTF.text.length < 6) {
@@ -101,6 +102,7 @@ static NSString * const XMGPlacerholderColorKeyPath = @"_placeholderLabel.textCo
                                  };
         FBRequest *request = [FBAPI postWithUrlString:@"/auth/login" requestDictionary:params delegate:self];
         [request startRequestSuccess:^(FBRequest *request, id result) {
+            [SVProgressHUD dismiss];
             NSLog(@"wqddqw %@", result);
             NSDictionary *dataDict = [result objectForKey:@"data"];
             UserModel *model = [UserModel mj_objectWithKeyValues:dataDict];

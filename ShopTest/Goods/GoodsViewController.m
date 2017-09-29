@@ -72,6 +72,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.navigationController.navigationBarHidden = YES;
     
     self.menuImageView.dk_imagePicker = DKImagePickerWithNames(@"classification",@"classificationHong",@"classification",@"classificationJin");

@@ -4,7 +4,7 @@ inhibit_all_warnings!
 target "ShopTest" do
  use_frameworks!
  pod "AFNetworking", "~> 3.0"
- pod 'SDWebImage', '~> 3.8'
+ pod 'SDWebImage', '~> 4.0.0'
  pod 'MJRefresh'
  pod 'Masonry'
  pod 'SVProgressHUD', :git => 'https://github.com/SVProgressHUD/SVProgressHUD.git'
@@ -13,5 +13,5 @@ target "ShopTest" do
  pod 'IQKeyboardManager'
  pod "DKNightVersion"
  pod 'Charts'
- pod 'ActionSheetPicker-3.0'
+ pod 'SDCycleScrollView','~> 1.66'
 end

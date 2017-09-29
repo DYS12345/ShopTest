@@ -43,10 +43,10 @@
     self.priceLabel.dk_textColorPicker = DKColorPickerWithKey(priceText);
     self.buyBtn.dk_backgroundColorPicker = DKColorPickerWithKey(priceText);
     
-    self.closeBtn.layer.masksToBounds = YES;
-    self.closeBtn.layer.cornerRadius = 3;
-    self.closeBtn.layer.borderColor = [UIColor whiteColor].CGColor;
-    self.closeBtn.layer.borderWidth = 1;
+//    self.closeBtn.layer.masksToBounds = YES;
+//    self.closeBtn.layer.cornerRadius = 3;
+//    self.closeBtn.layer.borderColor = [UIColor whiteColor].CGColor;
+//    self.closeBtn.layer.borderWidth = 1;
     
     self.rateLabel.layer.masksToBounds = YES;
     self.rateLabel.layer.cornerRadius = 1;

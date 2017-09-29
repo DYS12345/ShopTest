@@ -15,6 +15,8 @@
 #import "SVProgressHUD.h"
 #import "DKNightVersion.h"
 #import "DKNightVersion.h"
+#import "DongApplication.h"
+#import "ShowPictureViewController.h"
 
 @interface AppDelegate ()
 
@@ -49,7 +51,15 @@
     
     [SVProgressHUD setMaximumDismissTimeInterval:2];
     
+    [((DongApplication*)[DongApplication sharedApplication]) resetIdleTimer];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidTimeout:) name:kApplicationDidTimeoutNotification object:nil];
+    
     return YES;
+}
+
+-(void)applicationDidTimeout:(NSNotification*)notif {
+    ShowPictureViewController *vc = [ShowPictureViewController new];
+    self.window.rootViewController = vc;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -59,6 +69,7 @@
 
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:kApplicationDidTimeoutNotification object:nil];
 }
 
 
