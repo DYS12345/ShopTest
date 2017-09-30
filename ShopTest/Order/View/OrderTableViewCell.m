@@ -11,6 +11,7 @@
 #import "OrderModel.h"
 #import "OrderDetailModel.h"
 #import "UIImageView+WebCache.h"
+#import "DKNightVersion.h"
 
 @interface OrderTableViewCell ()
 
@@ -59,6 +60,8 @@
     self.statusBorderView.layer.borderColor = [UIColor colorWithHexString:@"#d2d2d2"].CGColor;
     self.statusBorderView.layer.borderWidth = 0.5;
     self.statusBorderView.layer.cornerRadius = 2;
+    
+    self.feiYongLabel.dk_textColorPicker = DKColorPickerWithKey(priceText);
 }
 
 -(void)setModel:(OrderModel *)model{

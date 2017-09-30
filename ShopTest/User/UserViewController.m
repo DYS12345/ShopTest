@@ -14,6 +14,7 @@
 #import "BaseNavController.h"
 #import "OrderViewController.h"
 #import "ValidationViewController.h"
+#import "SVProgressHUD.h"
 
 @interface UserViewController ()
 
@@ -67,6 +68,8 @@
 }
 
 - (IBAction)logOut:(id)sender {
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
+    [SVProgressHUD show];
     NSDictionary *param = @{
                             @"from_to" : @(4)
                             };

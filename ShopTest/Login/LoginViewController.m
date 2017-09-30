@@ -89,7 +89,8 @@ static NSString * const XMGPlacerholderColorKeyPath = @"_placeholderLabel.textCo
 }
 
 - (IBAction)login:(id)sender {
-    [SVProgressHUD showWithMaskType:(SVProgressHUDMaskTypeClear)];
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
+    [SVProgressHUD show];
     if (self.userNameTF.text.length == 0) {
         [SVProgressHUD showInfoWithStatus:@"账号未填写"];
     } else if (self.psdTF.text.length < 6) {
@@ -112,7 +113,7 @@ static NSString * const XMGPlacerholderColorKeyPath = @"_placeholderLabel.textCo
             GoodsViewController *vc = [GoodsViewController new];
             [self.navigationController pushViewController:vc animated:YES];
         } failure:^(FBRequest *request, NSError *error) {
-            
+            [SVProgressHUD dismiss];
         }];
     }
 }

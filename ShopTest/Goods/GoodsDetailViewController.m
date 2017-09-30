@@ -37,6 +37,11 @@
 
 @implementation GoodsDetailViewController
 
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [SVProgressHUD dismiss];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -53,12 +58,15 @@
     self.rateLabel.layer.borderWidth = 1;
     self.rateLabel.layer.borderColor = [UIColor colorWithHexString:@"#ffffff"].CGColor;
     
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeNone];
+    [SVProgressHUD show];
     NSDictionary *param = @{
                             @"id" : self.infoId
                             };
     FBRequest *request = [FBAPI postWithUrlString:@"/product/view" requestDictionary:param delegate:self];
     [request startRequestSuccess:^(FBRequest *request, id result) {
-        NSLog(@"sadsadsadsad %@", result);
+        [SVProgressHUD dismiss];
+        
         self.model = [GoodsDetailModel mj_objectWithKeyValues:result[@"data"]];
         
         self.goodsTitle.text = self.model.short_title;

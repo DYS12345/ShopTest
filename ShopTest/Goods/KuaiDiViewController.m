@@ -196,6 +196,8 @@ static NSString *const EditAddressURL = @"/delivery_address/save";
 }
 
 - (IBAction)buy:(id)sender {
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeNone];
+    [SVProgressHUD show];
     if (self.nameTF.text.length < 2) {
         [SVProgressHUD showInfoWithStatus:@"收货人姓名至少2个字符"];
         return;
@@ -255,6 +257,7 @@ static NSString *const EditAddressURL = @"/delivery_address/save";
                             };
     FBRequest *request1 = [FBAPI postWithUrlString:@"/shopping/confirm" requestDictionary:param delegate:self];
     [request1 startRequestSuccess:^(FBRequest *request, id result) {
+        [SVProgressHUD dismiss];
         PayWayViewController *vc = [PayWayViewController new];
         vc.rid = result[@"data"][@"rid"];
         vc.image = self.image;
@@ -264,6 +267,7 @@ static NSString *const EditAddressURL = @"/delivery_address/save";
         vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         [self presentViewController:vc animated:YES completion:nil];
     } failure:^(FBRequest *request, NSError *error) {
+        [SVProgressHUD dismiss];
     }];
 }
 

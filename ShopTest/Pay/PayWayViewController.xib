@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="17A264c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -38,7 +38,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M6Z-Ut-fUV">
-                            <rect key="frame" x="312" y="472" width="400" height="33"/>
+                            <rect key="frame" x="312" y="504" width="400" height="33"/>
                             <color key="backgroundColor" red="0.74509803919999995" green="0.53725490200000003" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="400" id="afX-tx-bmj"/>
@@ -51,7 +51,7 @@
                             </connections>
                         </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EgZ-KZ-Dz3">
-                            <rect key="frame" x="312" y="252" width="400" height="200"/>
+                            <rect key="frame" x="312" y="284" width="400" height="200"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="支付方式" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="01v-ce-mTJ">
                                     <rect key="frame" x="165.5" y="12" width="69.5" height="20.5"/>
@@ -235,10 +235,10 @@
                         <constraint firstItem="yVe-eT-6fq" firstAttribute="leading" secondItem="AYQ-79-1pD" secondAttribute="leading" id="H60-5P-idL"/>
                         <constraint firstItem="M6Z-Ut-fUV" firstAttribute="centerX" secondItem="AYQ-79-1pD" secondAttribute="centerX" id="JRH-5n-JK9"/>
                         <constraint firstItem="M6Z-Ut-fUV" firstAttribute="top" secondItem="EgZ-KZ-Dz3" secondAttribute="bottom" constant="20" id="JSs-s0-ORx"/>
+                        <constraint firstItem="EgZ-KZ-Dz3" firstAttribute="centerY" secondItem="AYQ-79-1pD" secondAttribute="centerY" id="Vbr-7d-KS2"/>
                         <constraint firstItem="EgZ-KZ-Dz3" firstAttribute="centerX" secondItem="AYQ-79-1pD" secondAttribute="centerX" id="bUe-7r-pfc"/>
                         <constraint firstAttribute="trailing" secondItem="yVe-eT-6fq" secondAttribute="trailing" id="mZe-Lp-BDa"/>
                         <constraint firstItem="yVe-eT-6fq" firstAttribute="top" secondItem="AYQ-79-1pD" secondAttribute="top" id="pMH-sq-mCa"/>
-                        <constraint firstItem="EgZ-KZ-Dz3" firstAttribute="top" secondItem="AYQ-79-1pD" secondAttribute="top" constant="252" id="svj-Is-qQ2"/>
                     </constraints>
                 </view>
             </subviews>

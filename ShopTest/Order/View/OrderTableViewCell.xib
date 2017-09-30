@@ -111,12 +111,12 @@
                         <rect key="frame" x="835.5" y="4.5" width="119.5" height="40"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gWL-fR-x7B">
-                                <rect key="frame" x="73.5" y="9" width="6" height="22"/>
+                                <rect key="frame" x="60" y="9" width="6" height="22"/>
                                 <state key="normal" image="Pull-down"/>
                                 <state key="selected" image="Pull-up"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="详情" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZMs-ON-QrE">
-                                <rect key="frame" x="25" y="12" width="27" height="16"/>
+                                <rect key="frame" x="26.5" y="12" width="27" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -125,7 +125,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="119.5" height="40"/>
                             </button>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V8N-H5-Und">
-                                <rect key="frame" x="20" y="10" width="64.5" height="20"/>
+                                <rect key="frame" x="21.5" y="10" width="49.5" height="20"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -133,17 +133,17 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="1Lr-oP-meL"/>
                             <constraint firstItem="ZMs-ON-QrE" firstAttribute="centerY" secondItem="DqN-7N-Fas" secondAttribute="centerY" id="56y-U6-JNo"/>
+                            <constraint firstItem="ZMs-ON-QrE" firstAttribute="centerX" secondItem="DqN-7N-Fas" secondAttribute="centerX" constant="-20" id="DpI-CG-85G"/>
                             <constraint firstAttribute="trailing" secondItem="N5I-Ly-kWb" secondAttribute="trailing" id="INW-YC-lLw"/>
                             <constraint firstAttribute="bottom" secondItem="N5I-Ly-kWb" secondAttribute="bottom" id="TH5-WI-kLb"/>
                             <constraint firstItem="N5I-Ly-kWb" firstAttribute="leading" secondItem="DqN-7N-Fas" secondAttribute="leading" id="W4M-VL-eua"/>
                             <constraint firstItem="V8N-H5-Und" firstAttribute="trailing" secondItem="gWL-fR-x7B" secondAttribute="trailing" constant="5" id="Wgk-fB-oZN"/>
                             <constraint firstItem="gWL-fR-x7B" firstAttribute="centerY" secondItem="DqN-7N-Fas" secondAttribute="centerY" id="YVH-aQ-i3m"/>
-                            <constraint firstAttribute="trailing" secondItem="gWL-fR-x7B" secondAttribute="trailing" constant="40" id="d3F-mQ-191"/>
                             <constraint firstItem="V8N-H5-Und" firstAttribute="leading" secondItem="ZMs-ON-QrE" secondAttribute="leading" constant="-5" id="d49-IU-JFF"/>
                             <constraint firstItem="N5I-Ly-kWb" firstAttribute="top" secondItem="DqN-7N-Fas" secondAttribute="top" id="eWj-gh-KvV"/>
                             <constraint firstItem="V8N-H5-Und" firstAttribute="top" secondItem="ZMs-ON-QrE" secondAttribute="top" constant="-2" id="ig8-Xw-i1f"/>
-                            <constraint firstItem="ZMs-ON-QrE" firstAttribute="leading" secondItem="DqN-7N-Fas" secondAttribute="leading" constant="25" id="jSg-pV-s7Q"/>
                             <constraint firstItem="V8N-H5-Und" firstAttribute="bottom" secondItem="ZMs-ON-QrE" secondAttribute="bottom" constant="2" id="lqY-AM-O3j"/>
+                            <constraint firstItem="gWL-fR-x7B" firstAttribute="leading" secondItem="ZMs-ON-QrE" secondAttribute="trailing" constant="6.5" id="zAt-Ah-RnO"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2fk-b3-1wh">

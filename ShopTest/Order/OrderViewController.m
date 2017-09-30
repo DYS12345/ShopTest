@@ -22,6 +22,7 @@
 #import "OrderModel.h"
 #import "OrderDetailModel.h"
 #import "MJRefresh.h"
+#import "DKNightVersion.h"
 
 @interface OrderViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -60,12 +61,11 @@
     self.logoImageView.dk_imagePicker = DKImagePickerWithNames(@"logo-1",@"logoHong",@"logo-1",@"logoHong");
     self.naviView.dk_backgroundColorPicker = DKColorPickerWithKey(naviBarViewBG);
     
-    
-    [self.allOrderBtn setTitleColor:[UIColor colorWithHexString:@"#BE8914"] forState:UIControlStateDisabled];
+    [self.allOrderBtn dk_setTitleColorPicker:DKColorPickerWithKey(priceText) forState:UIControlStateDisabled];
     [self.allOrderBtn setTitleColor:[UIColor colorWithHexString:@"#222222"] forState:UIControlStateNormal];
-    [self.zitiBtn setTitleColor:[UIColor colorWithHexString:@"#BE8914"] forState:UIControlStateDisabled];
+    [self.zitiBtn dk_setTitleColorPicker:DKColorPickerWithKey(priceText) forState:UIControlStateDisabled];
     [self.zitiBtn setTitleColor:[UIColor colorWithHexString:@"#222222"] forState:UIControlStateNormal];
-    [self.kuaiDiBtn setTitleColor:[UIColor colorWithHexString:@"#BE8914"] forState:UIControlStateDisabled];
+    [self.kuaiDiBtn dk_setTitleColorPicker:DKColorPickerWithKey(priceText) forState:UIControlStateDisabled];
     [self.kuaiDiBtn setTitleColor:[UIColor colorWithHexString:@"#222222"] forState:UIControlStateNormal];
     self.btnAry = @[self.allOrderBtn, self.zitiBtn, self.kuaiDiBtn];
     self.allOrderBtn.enabled = NO;
@@ -89,6 +89,7 @@
                             };
     FBRequest *request = [FBAPI postWithUrlString:@"/shopping/orders" requestDictionary:param delegate:self];
     [request startRequestSuccess:^(FBRequest *request, id result) {
+        NSLog(@"uiuwefbhb %@", result);
         self.modelAry = [OrderModel mj_objectArrayWithKeyValuesArray:result[@"data"][@"rows"]];
         self.modelAryl = [NSMutableArray arrayWithArray:self.modelAry];
         
@@ -264,7 +265,7 @@
     OrderTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"OrderTableViewCell"];
     cell.pullClickBtn.tag = indexPath.row;
     cell.model = self.modelAryl[indexPath.row-1];
-    if (self.orderDetailModelAryl.count > 0) {
+    if (self.orderDetailModelAryl.count == self.modelAryl.count) {
         cell.orderDetailModel = self.orderDetailModelAryl[indexPath.row-1];
     }
     [cell.pullClickBtn addTarget:self action:@selector(pullClick:) forControlEvents:UIControlEventTouchUpInside];

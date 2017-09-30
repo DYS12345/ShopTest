@@ -18,6 +18,7 @@
 #import "PayWayViewController.h"
 #import "SkuCollectionViewCell.h"
 #import "ZFFlowLayout.h"
+#import "SVProgressHUD.h"
 
 @interface OderInfoViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -184,6 +185,8 @@
 }
 
 - (IBAction)ziti:(id)sender {
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeNone];
+    [SVProgressHUD show];
     NSString *skuId = @"";
     for (int i = 0; i<self.model.skus.count; i++) {
         NSDictionary *s = self.model.skus[i];
@@ -200,7 +203,7 @@
                             };
     FBRequest *request = [FBAPI postWithUrlString:@"/shopping/now_buy" requestDictionary:param delegate:self];
     [request startRequestSuccess:^(FBRequest *request, id result) {
-        NSLog(@"fasdfasdsadsa  %@", result);
+        [SVProgressHUD dismiss];
         NSDictionary *param = @{
                                 @"rrid" : result[@"data"][@"order_info"][@"_id"],
                                 @"is_nowbuy" : @(1),
@@ -223,10 +226,13 @@
         } failure:^(FBRequest *request, NSError *error) {
         }];
     } failure:^(FBRequest *request, NSError *error) {
+        [SVProgressHUD dismiss];
     }];
 }
 
 - (IBAction)kuaiDi:(id)sender {
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeNone];
+    [SVProgressHUD show];
     NSString *skuId = @"";
     for (int i = 0; i<self.model.skus.count; i++) {
         NSDictionary *s = self.model.skus[i];
@@ -243,6 +249,7 @@
                             };
     FBRequest *request = [FBAPI postWithUrlString:@"/shopping/now_buy" requestDictionary:param delegate:self];
     [request startRequestSuccess:^(FBRequest *request, id result) {
+        [SVProgressHUD dismiss];
         KuaiDiViewController *vc = [KuaiDiViewController new];
         vc.rid = result[@"data"][@"order_info"][@"_id"];
         vc.image = self.image;
@@ -251,7 +258,7 @@
         vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         [self presentViewController:vc animated:YES completion:nil];
     } failure:^(FBRequest *request, NSError *error) {
-        
+        [SVProgressHUD dismiss];
     }];
 }
 

@@ -25,6 +25,7 @@
 #import "SearchHistoryModel.h"
 #import "SVProgressHUD.h"
 #import "ValidationViewController.h"
+#import "FBConfig.h"
 
 @interface GoodsViewController () <UICollectionViewDelegate, UICollectionViewDataSource, CategoryViewControllerDelegate, UITextFieldDelegate, SearchViewControllerDelegate, UserViewControllerDelegate>
 
@@ -290,7 +291,7 @@
 
 - (CGSize) collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(470/2, 470/2+55);
+    return CGSizeMake(470/2*SCREEN_WIDTH/1024.0, (470/2+55)*SCREEN_WIDTH/1024.0);
 }
 
 - (UIEdgeInsets) collectionView:(UICollectionView *)collectionView
