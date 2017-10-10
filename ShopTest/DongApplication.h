@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#define KApplicationTimeoutInMinutes 5
+#define KApplicationTimeoutInMinutes 0.5
 #define kApplicationDidTimeoutNotification @"ApplicationDidTimeout"
 
 @interface DongApplication : UIApplication
@@ -16,6 +16,8 @@
 {
     NSTimer *_myidleTimer;
 }
+
+@property (strong, nonatomic) NSArray *imageUrlAry;
 
 -(void)resetIdleTimer;
 

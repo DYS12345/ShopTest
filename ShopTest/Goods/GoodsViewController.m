@@ -26,6 +26,8 @@
 #import "SVProgressHUD.h"
 #import "ValidationViewController.h"
 #import "FBConfig.h"
+#import "DongApplication.h"
+#import "GoodsDetailModel.h"
 
 @interface GoodsViewController () <UICollectionViewDelegate, UICollectionViewDataSource, CategoryViewControllerDelegate, UITextFieldDelegate, SearchViewControllerDelegate, UserViewControllerDelegate>
 
@@ -46,6 +48,9 @@
 @property (weak, nonatomic) IBOutlet UIView *searchView;
 @property (weak, nonatomic) IBOutlet UITextField *searchTF;
 @property (strong, nonatomic) SearchViewController *searchVC;
+@property (strong, nonatomic) NSArray *imageModelAry;
+@property (nonatomic, strong) NSMutableArray *imageUrlAry;
+@property (nonatomic, assign) BOOL flag;
 
 @end
 
@@ -56,6 +61,13 @@
         _tagsAry = [NSMutableArray array];
     }
     return _tagsAry;
+}
+
+-(NSMutableArray *)imageUrlAry{
+    if (!_imageUrlAry) {
+        _imageUrlAry = [NSMutableArray array];
+    }
+    return _imageUrlAry;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -75,6 +87,8 @@
     [super viewDidLoad];
     
     self.navigationController.navigationBarHidden = YES;
+    
+    self.flag = YES;
     
     self.menuImageView.dk_imagePicker = DKImagePickerWithNames(@"classification",@"classificationHong",@"classification",@"classificationJin");
     [self.canBtn dk_setImage:DKImagePickerWithNames(@"Combined Shape",@"Combined ShapeHong",@"Combined Shape",@"Combined ShapeJin") forState:UIControlStateNormal];
@@ -252,6 +266,46 @@
         self.modelAry = [RowsModel mj_objectArrayWithKeyValuesArray:result[@"data"][@"rows"]];
         [self.collectionView reloadData];
         [self checkFooterState];
+        
+        if (self.flag) {
+            self.flag = NO;
+            
+            NSDictionary *param1 = @{
+                                     @"page" : @(1),
+                                     @"size" : @([self.total_rows integerValue]),
+                                     @"sort" : @(1),
+                                     @"scene_id" :userModel.storage_id,
+                                     @"tag" : @""
+                                     };
+            FBRequest *request1 = [FBAPI postWithUrlString:@"/scene_scene/product_list" requestDictionary:param1 delegate:self];
+            [request1 startRequestSuccess:^(FBRequest *request, id result) {
+                self.imageModelAry = [RowsModel mj_objectArrayWithKeyValuesArray:result[@"data"][@"rows"]];
+                for (int i = 0; i<self.imageModelAry.count; i++) {
+                    RowsModel *model = self.imageModelAry[i];
+                    NSDictionary *param2 = @{
+                                             @"id" : model.product_id
+                                             };
+                    FBRequest *request2 = [FBAPI postWithUrlString:@"/product/view" requestDictionary:param2 delegate:self];
+                    [request2 startRequestSuccess:^(FBRequest *request, id result) {
+                        GoodsDetailModel *detailModel = [GoodsDetailModel mj_objectWithKeyValues:result[@"data"]];
+                        NSArray *ary;
+                        if (detailModel.pad_asset.count == 0) {
+                            ary = detailModel.asset;
+                        } else {
+                            ary = detailModel.pad_asset;
+                        }
+                        [self.imageUrlAry addObjectsFromArray:ary];
+                        ((DongApplication*)[DongApplication sharedApplication]).imageUrlAry = [NSArray arrayWithArray:self.imageUrlAry];
+                    } failure:^(FBRequest *request, NSError *error) {
+                        
+                    }];
+                }
+            } failure:^(FBRequest *request, NSError *error) {
+                
+            }];
+        }
+        
+        
     } failure:^(FBRequest *request, NSError *error) {
         
     }];
