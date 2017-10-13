@@ -101,7 +101,7 @@ static NSString *const referral_code = @"referral_code=";
     
     UILabel * titleLab =[[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMinX(_imageView.frame), _imageView.frame.origin.y-30, CGRectGetWidth(_imageView.frame), 10)];
     titleLab.textAlignment = NSTextAlignmentCenter;
-    titleLab.text = @"将二维码放入框内可自动扫描";
+    titleLab.text = @"将条形码放入框内可自动扫描";
     titleLab.textColor =[UIColor whiteColor];
     [self.view addSubview:titleLab];
     [titleLab mas_makeConstraints:^(MASConstraintMaker *make) {

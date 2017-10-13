@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#define KApplicationTimeoutInMinutes 0.5
+#define KApplicationTimeoutInMinutes 5
 #define kApplicationDidTimeoutNotification @"ApplicationDidTimeout"
 
 @interface DongApplication : UIApplication
