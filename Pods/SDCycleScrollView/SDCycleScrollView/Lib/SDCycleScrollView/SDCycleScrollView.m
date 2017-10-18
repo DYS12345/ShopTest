@@ -36,7 +36,9 @@
 #import "SDWebImageManager.h"
 #import "UIImageView+WebCache.h"
 
+#define SCREEN_HEIGHT   [[UIScreen mainScreen] bounds].size.height
 #define kCycleScrollViewInitialPageControlDotSize CGSizeMake(10, 10)
+#define SCREEN_WIDTH    [[UIScreen mainScreen] bounds].size.width
 
 NSString * const ID = @"SDCycleScrollViewCell";
 
@@ -75,7 +77,7 @@ NSString * const ID = @"SDCycleScrollViewCell";
 - (void)initialization
 {
     _pageControlAliment = SDCycleScrollViewPageContolAlimentCenter;
-    _autoScrollTimeInterval = 2.0;
+    _autoScrollTimeInterval = 3.0;
     _titleLabelTextColor = [UIColor whiteColor];
     _titleLabelTextFont= [UIFont systemFontOfSize:14];
     _titleLabelBackgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
@@ -567,6 +569,22 @@ NSString * const ID = @"SDCycleScrollViewCell";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     SDCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ID forIndexPath:indexPath];
+    
+//    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT-125, SCREEN_WIDTH, 125)];
+//    view.backgroundColor = [UIColor colorWithWhite:0 alpha:0.7];
+//    [cell.contentView addSubview:view];
+//
+//    UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake(145, 12, 200, 30)];
+//    textLabel.textColor = [UIColor whiteColor];
+//    textLabel.text = @"音响";
+//    textLabel.font = [UIFont systemFontOfSize:17];
+//    [view addSubview:textLabel];
+//
+//    UILabel *descLabel = [[UILabel alloc] initWithFrame:CGRectMake(145, 125-30-20, 200, 30)];
+//    descLabel.textColor = [UIColor whiteColor];
+//    descLabel.text = @"音响";
+//    descLabel.font = [UIFont systemFontOfSize:17];
+//    [view addSubview:descLabel];
     
     long itemIndex = [self pageControlIndexWithCurrentCellIndex:indexPath.item];
     

@@ -17,22 +17,15 @@
 #import "FBAPI.h"
 #import "RowsModel.h"
 #import "GoodsDetailModel.h"
+#import "ShowPoictureStaticViewController.h"
 
 @interface ShowPictureViewController () <SDCycleScrollViewDelegate>
 
-@property (nonatomic, strong) SDCycleScrollView *cycleScrollView3;
+@property (weak, nonatomic) IBOutlet SDCycleScrollView *cycleScrollView3;
 
 @end
 
 @implementation ShowPictureViewController
-
--(SDCycleScrollView *)cycleScrollView3{
-    if (!_cycleScrollView3) {
-        _cycleScrollView3 = [SDCycleScrollView new];
-        _cycleScrollView3.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-    }
-    return _cycleScrollView3;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -40,42 +33,35 @@
     self.cycleScrollView3.imageURLStringsGroup = ((DongApplication*)[DongApplication sharedApplication]).imageUrlAry;
     _cycleScrollView3.delegate = self;
     _cycleScrollView3.showPageControl = NO;
+    _cycleScrollView3.titleLabelHeight = 125;
+    _cycleScrollView3.titleLabelTextAlignment = NSTextAlignmentCenter;
+    _cycleScrollView3.titleLabelTextFont = [UIFont systemFontOfSize:30];
     [self.view addSubview:_cycleScrollView3];
-    
-//    NSArray *imageNames = @[@"1.png",
-//                            @"2.png",
-//                            @"3.png",
-//                            @"4.png",
-//                            @"5.png",
-//                            @"6.png",
-//                            @"7.png",
-//                            @"8.png",
-//                            @"9.png",
-//                            @"10.png",
-//                            @"11.png",
-//                            @"12.png",
-//                            @"13.png",
-//                            @"14.png",
-//                            @"15.png",
-//                            @"16.png",
-//                            @"17.png",
-//                            @"18.png"
-//                            ];
-    
 }
 
 #pragma mark - SDCycleScrollViewDelegate
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index
 {
-    UserModel *model = [[UserModel findAll] lastObject];
-    BaseNavController *navVC;
-    if (!model.isLogin) {
-        navVC = [[BaseNavController alloc] initWithRootViewController:[LoginViewController new]];
-    } else {
-        navVC = [[BaseNavController alloc] initWithRootViewController:[GoodsViewController new]];
-    }
-    [UIApplication sharedApplication].keyWindow.rootViewController = navVC;
+    [((DongApplication*)[DongApplication sharedApplication]) resetIdleTimer:1000000000];
+    
+    ShowPoictureStaticViewController *vc = [ShowPoictureStaticViewController new];
+    vc.image = [self fullScreenshots];
+    vc.idStr = ((DongApplication*)[DongApplication sharedApplication]).idOAry[index];
+    [self presentViewController:vc animated:NO completion:nil];
 }
 
+-(UIImage*)fullScreenshots{
+    
+    UIWindow *screenWindow = [[UIApplication sharedApplication] keyWindow];
+    
+    UIGraphicsBeginImageContext(screenWindow.frame.size);//全屏截图，包括window
+    
+    [screenWindow.layer renderInContext:UIGraphicsGetCurrentContext()];
+    
+    UIImage *viewImage =UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    return viewImage;
+}
 
 @end

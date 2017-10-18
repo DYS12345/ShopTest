@@ -51,7 +51,7 @@
     
     [SVProgressHUD setMaximumDismissTimeInterval:2];
     
-    [((DongApplication*)[DongApplication sharedApplication]) resetIdleTimer];
+    [((DongApplication*)[DongApplication sharedApplication]) resetIdleTimer:0];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidTimeout:) name:kApplicationDidTimeoutNotification object:nil];
     
     return YES;
@@ -69,7 +69,7 @@
 
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:kApplicationDidTimeoutNotification object:nil];
+//    [[NSNotificationCenter defaultCenter] removeObserver:self name:kApplicationDidTimeoutNotification object:nil];
 }
 
 

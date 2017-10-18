@@ -28,6 +28,7 @@
 #import "FBConfig.h"
 #import "DongApplication.h"
 #import "GoodsDetailModel.h"
+#import "ShowPoictureStaticViewController.h"
 
 @interface GoodsViewController () <UICollectionViewDelegate, UICollectionViewDataSource, CategoryViewControllerDelegate, UITextFieldDelegate, SearchViewControllerDelegate, UserViewControllerDelegate>
 
@@ -50,11 +51,19 @@
 @property (strong, nonatomic) SearchViewController *searchVC;
 @property (strong, nonatomic) NSArray *imageModelAry;
 @property (nonatomic, strong) NSMutableArray *imageUrlAry;
+@property (nonatomic, strong) NSMutableArray *idOAry;
 @property (nonatomic, assign) BOOL flag;
 
 @end
 
 @implementation GoodsViewController
+
+-(NSMutableArray *)idOAry{
+    if (!_idOAry) {
+        _idOAry = [NSMutableArray array];
+    }
+    return _idOAry;
+}
 
 -(NSMutableArray *)tagsAry{
     if (!_tagsAry) {
@@ -72,6 +81,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+
 }
 
 -(SearchViewController *)searchVC{
@@ -118,7 +128,9 @@
     }];
     
     self.searchTF.delegate = self;
+    
 }
+
 
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
     self.searchVC.flag = NO;
@@ -294,8 +306,15 @@
                         } else {
                             ary = detailModel.pad_asset;
                         }
+                        NSMutableArray *idAry = [NSMutableArray array];
+                        NSString *idStr = model.product_id;
+                        for (int i = 0; i<ary.count; i++) {
+                            [idAry addObject:idStr];
+                        }
+                        [self.idOAry addObjectsFromArray:idAry];
                         [self.imageUrlAry addObjectsFromArray:ary];
                         ((DongApplication*)[DongApplication sharedApplication]).imageUrlAry = [NSArray arrayWithArray:self.imageUrlAry];
+                        ((DongApplication*)[DongApplication sharedApplication]).idOAry = [NSArray arrayWithArray:self.idOAry];
                     } failure:^(FBRequest *request, NSError *error) {
                         
                     }];

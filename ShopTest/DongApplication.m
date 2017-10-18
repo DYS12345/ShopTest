@@ -13,23 +13,28 @@
 -(void)sendEvent:(UIEvent *)event{
     [super sendEvent:event];
     if(!_myidleTimer){
-        [self resetIdleTimer];
+        [self resetIdleTimer:0];
     }
     NSSet *allTouches = [event allTouches];
     if(allTouches.count > 0){
         UITouchPhase phase = ((UITouch*)[allTouches anyObject]).phase;
         if (phase == UITouchPhaseBegan) {
-            [self resetIdleTimer];
+            [self resetIdleTimer:0];
         }
     }
 }
 
--(void)resetIdleTimer{
+-(void)resetIdleTimer:(NSInteger)n{
     if(_myidleTimer){
         [_myidleTimer invalidate];
     }
-    int timeout = KApplicationTimeoutInMinutes * 60;
-    _myidleTimer = [NSTimer scheduledTimerWithTimeInterval:timeout target:self selector:@selector(idleTimerExceeded) userInfo:nil repeats:NO];
+    if (n == 0) {
+        int timeout = KApplicationTimeoutInMinutes * 60;
+        _myidleTimer = [NSTimer scheduledTimerWithTimeInterval:timeout target:self selector:@selector(idleTimerExceeded) userInfo:nil repeats:NO];
+    } else {
+        NSInteger timeout = n * 60;
+        _myidleTimer = [NSTimer scheduledTimerWithTimeInterval:timeout target:self selector:@selector(idleTimerExceeded) userInfo:nil repeats:NO];
+    }
 }
 
 -(void)idleTimerExceeded{

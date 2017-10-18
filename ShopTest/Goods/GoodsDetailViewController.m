@@ -16,6 +16,10 @@
 #import "UIView+FSExtension.h"
 #import "DKNightVersion.h"
 #import "SVProgressHUD.h"
+#import "UserModel.h"
+#import "BaseNavController.h"
+#import "LoginViewController.h"
+#import "GoodsViewController.h"
 
 @interface GoodsDetailViewController () <UIScrollViewDelegate>
 
@@ -82,7 +86,7 @@
         for (int i = 0; i<ary.count; i++) {
             UIImageView *imageview=[[UIImageView alloc]init];
             [imageview sd_setImageWithURL:[NSURL URLWithString:ary[i]] placeholderImage:[UIImage imageNamed:@"Bitmap"]];
-            imageview.contentMode = UIViewContentModeScaleAspectFit;
+//            imageview.contentMode = UIViewContentModeScaleAspectFit;
             imageview.frame = CGRectMake(i*SCREEN_WIDTH, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
              [self.scrollView addSubview:imageview];
         }
@@ -124,6 +128,17 @@
 }
 
 - (IBAction)close:(id)sender {
+    if (self.flagCategory == 2) {
+        UserModel *model = [[UserModel findAll] lastObject];
+        BaseNavController *navVC;
+        if (!model.isLogin) {
+            navVC = [[BaseNavController alloc] initWithRootViewController:[LoginViewController new]];
+        } else {
+            navVC = [[BaseNavController alloc] initWithRootViewController:[GoodsViewController new]];
+        }
+        [UIApplication sharedApplication].keyWindow.rootViewController = navVC;
+        return;
+    }
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

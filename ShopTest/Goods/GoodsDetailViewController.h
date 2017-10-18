@@ -12,5 +12,6 @@
 @interface GoodsDetailViewController : UIViewController
 
 @property (nonatomic, copy) NSString *infoId;
+@property (nonatomic, assign) NSInteger flagCategory;
 
 @end
