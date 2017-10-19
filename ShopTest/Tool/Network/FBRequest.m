@@ -463,14 +463,14 @@ static BOOL                           _canSendMessage      = YES;
                                             
                                             weakSelf.isRunning = NO;
                                             
-                                            if ([[responseObject objectForKey:@"success"] isEqualToNumber:@1]) {
-                                                
-                                                success(weakSelf, responseObject);
-                                            } else {
-                                                [SVProgressHUD showInfoWithStatus:responseObject[@"message"]];
-                                            }
+//                                            if ([[responseObject objectForKey:@"success"] isEqualToNumber:@1]) {
+//
+//                                                success(weakSelf, responseObject);
+//                                            } else {
+//                                                [SVProgressHUD showInfoWithStatus:responseObject[@"message"]];
+//                                            }
                                             
-                                            //                                            success(weakSelf, responseObject);
+                                            success(weakSelf, responseObject);
 
                                         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                                         

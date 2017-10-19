@@ -62,7 +62,9 @@
     self.statusBorderView.layer.cornerRadius = 2;
     
     self.feiYongLabel.dk_textColorPicker = DKColorPickerWithKey(priceText);
+    self.samplePrice.dk_textColorPicker = DKColorPickerWithKey(priceText);
 }
+
 
 -(void)setModel:(OrderModel *)model{
     _model = model;

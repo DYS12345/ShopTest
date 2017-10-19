@@ -13,12 +13,14 @@
             <connections>
                 <outlet property="buyBtn" destination="gOp-1o-9eM" id="Ia9-3E-fcg"/>
                 <outlet property="closeBtn" destination="pA1-Ta-Hwo" id="oR8-05-rVE"/>
+                <outlet property="closeBtnTop" destination="MrP-4b-zRa" id="oFX-k3-3TF"/>
                 <outlet property="goodsDescreb" destination="JK0-R4-RHq" id="aHh-mD-sDY"/>
                 <outlet property="goodsDetailView" destination="fXc-5T-Jvu" id="FmP-QO-FXU"/>
                 <outlet property="goodsDetailViewBottom" destination="rGP-7O-iLe" id="3kj-Fx-lQj"/>
                 <outlet property="goodsTitle" destination="YUJ-Nd-TB1" id="dRB-He-9sA"/>
                 <outlet property="leftBtn" destination="2qb-cq-Xm5" id="9xv-jM-kxE"/>
                 <outlet property="pageLabel" destination="4aM-fi-BOT" id="PGe-Tf-P8Q"/>
+                <outlet property="pageLabelTop" destination="wLr-Jy-afG" id="wwe-3P-haW"/>
                 <outlet property="priceLabel" destination="th7-l5-lae" id="skJ-tP-5Jm"/>
                 <outlet property="rateLabel" destination="aYL-lc-2pg" id="LBf-AT-oHY"/>
                 <outlet property="rightBtn" destination="HVR-GN-ffw" id="2K8-h0-fPb"/>
@@ -116,16 +118,20 @@
                         <action selector="right:" destination="-1" eventType="touchUpInside" id="aDL-Qg-fdb"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4aM-fi-BOT">
-                    <rect key="frame" x="499.5" y="30" width="26" height="20.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4aM-fi-BOT">
+                    <rect key="frame" x="472.5" y="30" width="80" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="FfB-1H-eeG"/>
+                        <constraint firstAttribute="width" constant="80" id="pyZ-t5-ebp"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pA1-Ta-Hwo">
-                    <rect key="frame" x="904" y="30" width="90" height="30"/>
+                    <rect key="frame" x="934" y="28" width="75" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="90" id="iZr-hV-xr3"/>
+                        <constraint firstAttribute="width" constant="75" id="iZr-hV-xr3"/>
                         <constraint firstAttribute="height" constant="30" id="qkp-eQ-Jaq"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -139,8 +145,8 @@
             <constraints>
                 <constraint firstItem="2qb-cq-Xm5" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="FZD-gs-0up"/>
                 <constraint firstItem="fXc-5T-Jvu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="GbA-c5-o2I"/>
-                <constraint firstAttribute="trailing" secondItem="pA1-Ta-Hwo" secondAttribute="trailing" constant="30" id="K2j-Ec-irW"/>
-                <constraint firstItem="pA1-Ta-Hwo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="MrP-4b-zRa"/>
+                <constraint firstAttribute="trailing" secondItem="pA1-Ta-Hwo" secondAttribute="trailing" constant="15" id="K2j-Ec-irW"/>
+                <constraint firstItem="pA1-Ta-Hwo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="28" id="MrP-4b-zRa"/>
                 <constraint firstItem="HVR-GN-ffw" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="RSb-wU-utc"/>
                 <constraint firstItem="txQ-B3-uwr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Vyy-ZO-1da"/>
                 <constraint firstAttribute="trailing" secondItem="fXc-5T-Jvu" secondAttribute="trailing" id="Wny-dr-Q4d"/>

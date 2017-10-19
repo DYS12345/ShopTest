@@ -8,9 +8,6 @@
 
 #import "OrderViewController.h"
 #import "DKNightVersion.h"
-#import "AllOrderViewController.h"
-#import "OrderZiTiViewController.h"
-#import "KuaiDiOrderViewController.h"
 #import "UIColor+Extension.h"
 #import "FBConfig.h"
 #import "UIView+FSExtension.h"
@@ -23,6 +20,7 @@
 #import "OrderDetailModel.h"
 #import "MJRefresh.h"
 #import "DKNightVersion.h"
+#import "PrintViewController.h"
 
 @interface OrderViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -264,6 +262,8 @@
     
     OrderTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"OrderTableViewCell"];
     cell.pullClickBtn.tag = indexPath.row;
+    cell.printBtn.tag = indexPath.row;
+    [cell.printBtn addTarget:self action:@selector(print:) forControlEvents:UIControlEventTouchUpInside];
     cell.model = self.modelAryl[indexPath.row-1];
     if (self.orderDetailModelAryl.count == self.modelAryl.count) {
         cell.orderDetailModel = self.orderDetailModelAryl[indexPath.row-1];
@@ -277,6 +277,29 @@
         cell.orderDetailView.hidden = YES;
     }
     return cell;
+}
+
+-(void)print:(UIButton*)sender{
+    OrderModel *model = self.modelAryl[sender.tag-1];
+    PrintViewController *vc = [PrintViewController new];
+    vc.model = model;
+    vc.image = [self fullScreenshots];
+    vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:vc animated:YES completion:nil];
+}
+
+-(UIImage*)fullScreenshots{
+    
+    UIWindow *screenWindow = [[UIApplication sharedApplication] keyWindow];
+    
+    UIGraphicsBeginImageContext(screenWindow.frame.size);//全屏截图，包括window
+    
+    [screenWindow.layer renderInContext:UIGraphicsGetCurrentContext()];
+    
+    UIImage *viewImage =UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    return viewImage;
 }
 
 -(void)pullClick:(UIButton*)sender{

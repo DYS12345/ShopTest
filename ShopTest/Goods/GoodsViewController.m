@@ -29,6 +29,7 @@
 #import "DongApplication.h"
 #import "GoodsDetailModel.h"
 #import "ShowPoictureStaticViewController.h"
+#import "ShowPictureViewController.h"
 
 @interface GoodsViewController () <UICollectionViewDelegate, UICollectionViewDataSource, CategoryViewControllerDelegate, UITextFieldDelegate, SearchViewControllerDelegate, UserViewControllerDelegate>
 
@@ -315,6 +316,12 @@
                         [self.imageUrlAry addObjectsFromArray:ary];
                         ((DongApplication*)[DongApplication sharedApplication]).imageUrlAry = [NSArray arrayWithArray:self.imageUrlAry];
                         ((DongApplication*)[DongApplication sharedApplication]).idOAry = [NSArray arrayWithArray:self.idOAry];
+                        
+                        
+                        UISwipeGestureRecognizer * recognizer;
+                        recognizer = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipeFrom)];
+                        [recognizer setDirection:(UISwipeGestureRecognizerDirectionLeft)];
+                        [self.collectionView addGestureRecognizer:recognizer];
                     } failure:^(FBRequest *request, NSError *error) {
                         
                     }];
@@ -328,6 +335,12 @@
     } failure:^(FBRequest *request, NSError *error) {
         
     }];
+}
+
+-(void)handleSwipeFrom{
+    [((DongApplication*)[DongApplication sharedApplication]) resetIdleTimer:1000000000];
+    ShowPictureViewController *vc = [ShowPictureViewController new];
+    ((UIApplication*)[UIApplication sharedApplication]).keyWindow.rootViewController = vc;
 }
 
 -(void)pushNot{

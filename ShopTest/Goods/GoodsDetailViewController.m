@@ -36,6 +36,8 @@
 @property (weak, nonatomic) IBOutlet UIView *goodsDetailView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *goodsDetailViewBottom;
 @property (weak, nonatomic) IBOutlet UIButton *closeBtn;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *pageLabelTop;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *closeBtnTop;
 
 @end
 
@@ -52,10 +54,13 @@
     self.priceLabel.dk_textColorPicker = DKColorPickerWithKey(priceText);
     self.buyBtn.dk_backgroundColorPicker = DKColorPickerWithKey(priceText);
     
-//    self.closeBtn.layer.masksToBounds = YES;
-//    self.closeBtn.layer.cornerRadius = 3;
-//    self.closeBtn.layer.borderColor = [UIColor whiteColor].CGColor;
-//    self.closeBtn.layer.borderWidth = 1;
+    self.pageLabel.backgroundColor = [UIColor colorWithRed:36/255.0 green:36/255.0 blue:36/255.0 alpha:0.4];
+    self.pageLabel.layer.masksToBounds = YES;
+    self.pageLabel.layer.cornerRadius = 15;
+    
+    [self.closeBtn dk_setBackgroundColorPicker:DKColorPickerWithKey(priceText)];
+    self.closeBtn.layer.masksToBounds = YES;
+    self.closeBtn.layer.cornerRadius = 15;
     
     self.rateLabel.layer.masksToBounds = YES;
     self.rateLabel.layer.cornerRadius = 1;
@@ -123,6 +128,13 @@
     }
     [UIView animateWithDuration:0.3 animations:^{
         self.goodsDetailViewBottom.constant = n;
+        if (self.pageLabelTop.constant == -33) {
+            self.pageLabelTop.constant = 30;
+            self.closeBtnTop.constant = 28;
+        } else {
+            self.pageLabelTop.constant = -33;
+            self.closeBtnTop.constant = -33;
+        }
         [self.view layoutIfNeeded];
     }];
 }

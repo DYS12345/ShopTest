@@ -18,5 +18,6 @@
 @property (weak, nonatomic) IBOutlet UIView *orderDetailView;
 @property (strong, nonatomic) OrderModel *model;
 @property (strong, nonatomic) OrderDetailModel *orderDetailModel;
+@property (weak, nonatomic) IBOutlet UIButton *printBtn;
 
 @end

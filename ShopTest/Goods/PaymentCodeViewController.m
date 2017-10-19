@@ -25,15 +25,81 @@
 @property (weak, nonatomic) IBOutlet UILabel *yunfeiLabel;
 @property (weak, nonatomic) IBOutlet UILabel *yingfukuanLabel;
 @property (weak, nonatomic) IBOutlet UILabel *payWayLabel;
+@property (weak, nonatomic) IBOutlet UIView *daYinView;
+@property (weak, nonatomic) IBOutlet UIView *zhengZaiDaYinView;
+@property (weak, nonatomic) IBOutlet UIImageView *zhengZaiDaYinImageView;
+@property (weak, nonatomic) IBOutlet UIView *daYinSuccessView;
+@property (weak, nonatomic) IBOutlet UIView *printFailView;
+@property (weak, nonatomic) IBOutlet UIView *rePrintView;
 
 @end
 
 @implementation PaymentCodeViewController
 
+- (IBAction)daYin:(id)sender {
+    [self.zhengZaiDaYinImageView startAnimating];
+    self.zhengZaiDaYinView.hidden = NO;
+    NSDictionary *param = @{
+                            @"rid" : self.rid
+                            };
+    FBRequest *request = [FBAPI postWithUrlString:@"/shopping/print_order" requestDictionary:param delegate:self];
+    [request startRequestSuccess:^(FBRequest *request, id result) {
+        if ([result[@"success"] integerValue] == 1) {
+            [self.zhengZaiDaYinImageView stopAnimating];
+            self.daYinSuccessView.hidden = NO;
+        } else {
+            [self.zhengZaiDaYinImageView stopAnimating];
+            self.printFailView.hidden = NO;
+        }
+    } failure:^(FBRequest *request, NSError *error) {
+    }];
+}
+
+- (IBAction)rePrint:(id)sender {
+    self.printFailView.hidden = YES;
+    [self.zhengZaiDaYinImageView startAnimating];
+    NSDictionary *param = @{
+                            @"rid" : self.rid
+                            };
+    FBRequest *request = [FBAPI postWithUrlString:@"/shopping/print_order" requestDictionary:param delegate:self];
+    [request startRequestSuccess:^(FBRequest *request, id result) {
+        if ([result[@"success"] integerValue] == 1) {
+            [self.zhengZaiDaYinImageView stopAnimating];
+            self.daYinSuccessView.hidden = NO;
+        } else {
+            [self.zhengZaiDaYinImageView stopAnimating];
+            self.printFailView.hidden = NO;
+        }
+    } failure:^(FBRequest *request, NSError *error) {
+    }];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.zhengZaiDaYinView.hidden = YES;
+    self.daYinSuccessView.hidden = YES;
+    self.printFailView.hidden = YES;
+    
+    NSMutableArray *imageAry = [NSMutableArray array];
+    for (int i = 1; i<=60; i++) {
+        NSString *str = [NSString stringWithFormat:@"d%04d", i];
+        UIImage *image = [UIImage imageNamed:str];
+        [imageAry addObject:image];
+    }
+    self.zhengZaiDaYinImageView.animationImages = imageAry;
+    self.zhengZaiDaYinImageView.animationDuration = 6;
+    self.zhengZaiDaYinImageView.animationRepeatCount = 0;
+    
     self.imageView.image = self.image;
+    
+    self.daYinView.dk_backgroundColorPicker = DKColorPickerWithKey(priceText);
+    self.daYinView.layer.masksToBounds = YES;
+    self.daYinView.layer.cornerRadius = 2;
+    
+    self.rePrintView.dk_backgroundColorPicker = DKColorPickerWithKey(priceText);
+    self.rePrintView.layer.masksToBounds = YES;
+    self.rePrintView.layer.cornerRadius = 2;
     
     self.youhuiLabel.text = [NSString stringWithFormat:@"优惠￥%@", self.coin_money];
     self.yunfeiLabel.text = [NSString stringWithFormat:@"运费￥%@", self.freight];
@@ -67,7 +133,6 @@
                             };
     FBRequest *request1 = [FBAPI postWithUrlString:@"/shopping/payed" requestDictionary:param delegate:self];
     [request1 startRequestSuccess:^(FBRequest *request, id result) {
-        NSLog(@"efefwegfewb %@", result);
         NSString *str = result[@"data"][@"code_url"];
         self.qtCodeImageView.image = [self qrImageForString:str imageSize:200 logoImageSize:50];
     } failure:^(FBRequest *request, NSError *error) {
@@ -154,7 +219,7 @@
         WEAKSELF
         [request startRequestSuccess:^(FBRequest *request, id result) {
             NSDictionary * dataDic = [result objectForKey:@"data"];
-            if ([[dataDic objectForKey:@"status"] isEqualToNumber:@10] | [[dataDic objectForKey:@"status"] isEqualToNumber:@16]) {
+            if (!([[dataDic objectForKey:@"status"] isEqualToNumber:@10] | [[dataDic objectForKey:@"status"] isEqualToNumber:@16])) {
                 self.successView.hidden = NO;
             } else {
             }

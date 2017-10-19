@@ -54,12 +54,6 @@
 		F56B4B831F70AD2A003B9E73 /* OrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F56B4B811F70AD2A003B9E73 /* OrderViewController.xib */; };
 		F56B4B9D1F724240003B9E73 /* ValidationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F56B4B9B1F724240003B9E73 /* ValidationViewController.m */; };
 		F56B4B9E1F724240003B9E73 /* ValidationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F56B4B9C1F724240003B9E73 /* ValidationViewController.xib */; };
-		F56B4BA21F7267A8003B9E73 /* AllOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F56B4BA01F7267A8003B9E73 /* AllOrderViewController.m */; };
-		F56B4BA31F7267A8003B9E73 /* AllOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F56B4BA11F7267A8003B9E73 /* AllOrderViewController.xib */; };
-		F56B4BA71F7267F9003B9E73 /* OrderZiTiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F56B4BA51F7267F9003B9E73 /* OrderZiTiViewController.m */; };
-		F56B4BA81F7267F9003B9E73 /* OrderZiTiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F56B4BA61F7267F9003B9E73 /* OrderZiTiViewController.xib */; };
-		F56B4BAC1F7268B1003B9E73 /* KuaiDiOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F56B4BAA1F7268B1003B9E73 /* KuaiDiOrderViewController.m */; };
-		F56B4BAD1F7268B1003B9E73 /* KuaiDiOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F56B4BAB1F7268B1003B9E73 /* KuaiDiOrderViewController.xib */; };
 		F56CDAFB1F74C17F00238750 /* OrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F56CDAFA1F74C17F00238750 /* OrderModel.m */; };
 		F56CDAFF1F7501A100238750 /* OrderDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F56CDAFE1F7501A100238750 /* OrderDetailModel.m */; };
 		F59C25131F6A222600C4087B /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F59C25111F6A222600C4087B /* UserViewController.m */; };
@@ -86,6 +80,8 @@
 		F5A981901F7E2BA400A18EC9 /* ShowPictureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5A9818E1F7E2BA400A18EC9 /* ShowPictureViewController.xib */; };
 		F5C4654E1F95E22900FCCF96 /* ShowPoictureStaticViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C4654C1F95E22900FCCF96 /* ShowPoictureStaticViewController.m */; };
 		F5C4654F1F95E22900FCCF96 /* ShowPoictureStaticViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5C4654D1F95E22900FCCF96 /* ShowPoictureStaticViewController.xib */; };
+		F5C465531F98965800FCCF96 /* PrintViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C465511F98965800FCCF96 /* PrintViewController.m */; };
+		F5C465541F98965800FCCF96 /* PrintViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5C465521F98965800FCCF96 /* PrintViewController.xib */; };
 		F5CC32031F67B03D006F03F2 /* DKColorTable.txt in Resources */ = {isa = PBXBuildFile; fileRef = F5CC32021F67B03D006F03F2 /* DKColorTable.txt */; };
 		F5D326A01F5E8DEF004A0C78 /* THNChooseCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D3269F1F5E8DEF004A0C78 /* THNChooseCityViewController.m */; };
 		F5D326A31F5E8F50004A0C78 /* THNProvinceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D326A21F5E8F50004A0C78 /* THNProvinceModel.m */; };
@@ -185,15 +181,6 @@
 		F56B4B9A1F724240003B9E73 /* ValidationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValidationViewController.h; sourceTree = "<group>"; };
 		F56B4B9B1F724240003B9E73 /* ValidationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValidationViewController.m; sourceTree = "<group>"; };
 		F56B4B9C1F724240003B9E73 /* ValidationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ValidationViewController.xib; sourceTree = "<group>"; };
-		F56B4B9F1F7267A8003B9E73 /* AllOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllOrderViewController.h; sourceTree = "<group>"; };
-		F56B4BA01F7267A8003B9E73 /* AllOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllOrderViewController.m; sourceTree = "<group>"; };
-		F56B4BA11F7267A8003B9E73 /* AllOrderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AllOrderViewController.xib; sourceTree = "<group>"; };
-		F56B4BA41F7267F9003B9E73 /* OrderZiTiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderZiTiViewController.h; sourceTree = "<group>"; };
-		F56B4BA51F7267F9003B9E73 /* OrderZiTiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderZiTiViewController.m; sourceTree = "<group>"; };
-		F56B4BA61F7267F9003B9E73 /* OrderZiTiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderZiTiViewController.xib; sourceTree = "<group>"; };
-		F56B4BA91F7268B1003B9E73 /* KuaiDiOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KuaiDiOrderViewController.h; sourceTree = "<group>"; };
-		F56B4BAA1F7268B1003B9E73 /* KuaiDiOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KuaiDiOrderViewController.m; sourceTree = "<group>"; };
-		F56B4BAB1F7268B1003B9E73 /* KuaiDiOrderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KuaiDiOrderViewController.xib; sourceTree = "<group>"; };
 		F56CDAF91F74C17F00238750 /* OrderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderModel.h; sourceTree = "<group>"; };
 		F56CDAFA1F74C17F00238750 /* OrderModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderModel.m; sourceTree = "<group>"; };
 		F56CDAFD1F7501A100238750 /* OrderDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderDetailModel.h; sourceTree = "<group>"; };
@@ -237,6 +224,9 @@
 		F5C4654B1F95E22900FCCF96 /* ShowPoictureStaticViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowPoictureStaticViewController.h; sourceTree = "<group>"; };
 		F5C4654C1F95E22900FCCF96 /* ShowPoictureStaticViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowPoictureStaticViewController.m; sourceTree = "<group>"; };
 		F5C4654D1F95E22900FCCF96 /* ShowPoictureStaticViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowPoictureStaticViewController.xib; sourceTree = "<group>"; };
+		F5C465501F98965800FCCF96 /* PrintViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrintViewController.h; sourceTree = "<group>"; };
+		F5C465511F98965800FCCF96 /* PrintViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrintViewController.m; sourceTree = "<group>"; };
+		F5C465521F98965800FCCF96 /* PrintViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrintViewController.xib; sourceTree = "<group>"; };
 		F5CC32021F67B03D006F03F2 /* DKColorTable.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DKColorTable.txt; sourceTree = "<group>"; };
 		F5D3269E1F5E8DEF004A0C78 /* THNChooseCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THNChooseCityViewController.h; sourceTree = "<group>"; };
 		F5D3269F1F5E8DEF004A0C78 /* THNChooseCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THNChooseCityViewController.m; sourceTree = "<group>"; };
@@ -585,15 +575,9 @@
 				F56B4B9A1F724240003B9E73 /* ValidationViewController.h */,
 				F56B4B9B1F724240003B9E73 /* ValidationViewController.m */,
 				F56B4B9C1F724240003B9E73 /* ValidationViewController.xib */,
-				F56B4B9F1F7267A8003B9E73 /* AllOrderViewController.h */,
-				F56B4BA01F7267A8003B9E73 /* AllOrderViewController.m */,
-				F56B4BA11F7267A8003B9E73 /* AllOrderViewController.xib */,
-				F56B4BA41F7267F9003B9E73 /* OrderZiTiViewController.h */,
-				F56B4BA51F7267F9003B9E73 /* OrderZiTiViewController.m */,
-				F56B4BA61F7267F9003B9E73 /* OrderZiTiViewController.xib */,
-				F56B4BA91F7268B1003B9E73 /* KuaiDiOrderViewController.h */,
-				F56B4BAA1F7268B1003B9E73 /* KuaiDiOrderViewController.m */,
-				F56B4BAB1F7268B1003B9E73 /* KuaiDiOrderViewController.xib */,
+				F5C465501F98965800FCCF96 /* PrintViewController.h */,
+				F5C465511F98965800FCCF96 /* PrintViewController.m */,
+				F5C465521F98965800FCCF96 /* PrintViewController.xib */,
 			);
 			path = Order;
 			sourceTree = "<group>";
@@ -743,7 +727,6 @@
 				F56468901F56684E00C728E8 /* Podfile in Resources */,
 				48BE56741F73593700455B0C /* SalesOrderTableViewCell.xib in Resources */,
 				F55C91B21F6910F600A35457 /* PayWayViewController.xib in Resources */,
-				F56B4BAD1F7268B1003B9E73 /* KuaiDiOrderViewController.xib in Resources */,
 				F5A53C121F59764600DAECC5 /* OderInfoViewController.xib in Resources */,
 				F564688D1F5660A200C728E8 /* LoginViewController.xib in Resources */,
 				F51A421B1F565EE400D73497 /* LaunchScreen.storyboard in Resources */,
@@ -752,14 +735,13 @@
 				F51A42181F565EE400D73497 /* Assets.xcassets in Resources */,
 				F5CC32031F67B03D006F03F2 /* DKColorTable.txt in Resources */,
 				F5A981901F7E2BA400A18EC9 /* ShowPictureViewController.xib in Resources */,
-				F56B4BA81F7267F9003B9E73 /* OrderZiTiViewController.xib in Resources */,
 				F55C91AC1F6908A500A35457 /* ThemeViewController.xib in Resources */,
 				48BE56811F7395EC00455B0C /* OrderTableViewCell.xib in Resources */,
 				48BE566F1F73519A00455B0C /* ConsoleViewController.xib in Resources */,
 				F56B4B0C1F6F8C98003B9E73 /* SkuCollectionViewCell.xib in Resources */,
 				F5F834E51F6BB58B000480DA /* SearchResultListViewController.xib in Resources */,
 				F56B4B281F6F9BAD003B9E73 /* left.png in Resources */,
-				F56B4BA31F7267A8003B9E73 /* AllOrderViewController.xib in Resources */,
+				F5C465541F98965800FCCF96 /* PrintViewController.xib in Resources */,
 				F5F834E01F6B86D9000480DA /* SearchExpandedTableViewCell.xib in Resources */,
 				F5D326A81F5FD218004A0C78 /* CategoryTableViewCell.xib in Resources */,
 				F5A53BFD1F57F55000DAECC5 /* GoodsCollectionViewCell.xib in Resources */,
@@ -845,7 +827,6 @@
 				F564688C1F5660A200C728E8 /* LoginViewController.m in Sources */,
 				F564689E1F56995A00C728E8 /* FBRequest.m in Sources */,
 				48BE56731F73593700455B0C /* SalesOrderTableViewCell.m in Sources */,
-				F56B4BAC1F7268B1003B9E73 /* KuaiDiOrderViewController.m in Sources */,
 				F5A53C181F5D240F00DAECC5 /* Sku.m in Sources */,
 				F56B4B2C1F6F9BAD003B9E73 /* RightAlignedFlowLayout.m in Sources */,
 				F52C35291F57AC0700800C8C /* UIColor+Extension.m in Sources */,
@@ -868,7 +849,6 @@
 				F56B4B821F70AD2A003B9E73 /* OrderViewController.m in Sources */,
 				F56468A31F569A2700C728E8 /* NSString+FBMD5.m in Sources */,
 				F5A53C071F58F58600DAECC5 /* CategoryViewController.m in Sources */,
-				F56B4BA71F7267F9003B9E73 /* OrderZiTiViewController.m in Sources */,
 				F56B4A9B1F6D4DC2003B9E73 /* HistoryTopTableViewCell.m in Sources */,
 				F5A53C031F581E4000DAECC5 /* UIView+FSExtension.m in Sources */,
 				F5F834E41F6BB58B000480DA /* SearchResultListViewController.m in Sources */,
@@ -881,11 +861,11 @@
 				F52C352D1F57BEE900800C8C /* GoodsModel.m in Sources */,
 				F5C4654E1F95E22900FCCF96 /* ShowPoictureStaticViewController.m in Sources */,
 				F5A53C001F58110000DAECC5 /* QRCodeScanViewController.m in Sources */,
+				F5C465531F98965800FCCF96 /* PrintViewController.m in Sources */,
 				F5A53C221F5E40D300DAECC5 /* KuaiDiViewController.m in Sources */,
 				F51A42101F565EE400D73497 /* AppDelegate.m in Sources */,
 				F56468B11F56A0E000C728E8 /* Vc.m in Sources */,
 				F51A420D1F565EE400D73497 /* main.m in Sources */,
-				F56B4BA21F7267A8003B9E73 /* AllOrderViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

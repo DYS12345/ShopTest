@@ -23,25 +23,20 @@
 @property (weak, nonatomic) IBOutlet UILabel *decLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 @property (weak, nonatomic) IBOutlet UIButton *detailBtn;
+@property (weak, nonatomic) IBOutlet UIButton *closeBtn;
 
 @end
 
 @implementation ShowPoictureStaticViewController
 
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    
-}
-
--(void)viewDidDisappear:(BOOL)animated{
-    [super viewDidDisappear:animated];
-    
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.imageView.image = self.image;
+    
+    [self.closeBtn dk_setBackgroundColorPicker:DKColorPickerWithKey(priceText)];
+    self.closeBtn.layer.masksToBounds = YES;
+    self.closeBtn.layer.cornerRadius = 15;
     
     NSDictionary *param2 = @{
                              @"id" : self.idStr
