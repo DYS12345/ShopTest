@@ -124,15 +124,22 @@
     } else if (self.payWay == 2) {
         self.payWayLabel.text = @"支付宝扫描二维码付款";
         zhifufangshi = @"alipay";
+    } else if (self.payWay == 3) {
+        self.payWayLabel.text = @"现金支付";
+        zhifufangshi = @"cash";
     }
     
     NSDictionary *param = @{
                             @"rid" : self.rid,
                             @"payaway" : zhifufangshi,
-                            @"pay_type" : @(2)
+                            @"pay_type" : @(self.payWay)
                             };
     FBRequest *request1 = [FBAPI postWithUrlString:@"/shopping/payed" requestDictionary:param delegate:self];
     [request1 startRequestSuccess:^(FBRequest *request, id result) {
+        if (self.payWay == 3) {
+            //loading图出现
+            return;
+        }
         NSString *str = result[@"data"][@"code_url"];
         self.qtCodeImageView.image = [self qrImageForString:str imageSize:200 logoImageSize:50];
     } failure:^(FBRequest *request, NSError *error) {
@@ -219,7 +226,7 @@
         WEAKSELF
         [request startRequestSuccess:^(FBRequest *request, id result) {
             NSDictionary * dataDic = [result objectForKey:@"data"];
-            if (!([[dataDic objectForKey:@"status"] isEqualToNumber:@10] | [[dataDic objectForKey:@"status"] isEqualToNumber:@16])) {
+            if (([[dataDic objectForKey:@"status"] isEqualToNumber:@10] | [[dataDic objectForKey:@"status"] isEqualToNumber:@16])) {
                 self.successView.hidden = NO;
             } else {
             }

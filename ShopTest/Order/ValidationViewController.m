@@ -13,7 +13,7 @@
 #import "ConsoleViewController.h"
 #import "DKNightVersion.h"
 
-@interface ValidationViewController ()
+@interface ValidationViewController () <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *imgeView;
 @property (weak, nonatomic) IBOutlet UIView *showView;
@@ -40,6 +40,8 @@
     self.querenBtn.layer.cornerRadius = 3;
     
     [self.querenBtn dk_setBackgroundColorPicker:DKColorPickerWithKey(priceText)];
+    
+    self.tf.delegate = self;
 }
 
 - (IBAction)close:(id)sender {
@@ -49,6 +51,27 @@
 - (IBAction)display:(UIButton*)sender {
     sender.selected = !sender.selected;
     self.tf.secureTextEntry = !sender.selected;
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    if (self.tf.text.length == 0) {
+        [SVProgressHUD showInfoWithStatus:@"请输入密码"];
+    }
+    UserModel *model = [[UserModel findAll] lastObject];
+    if ([model.psd isEqualToString:self.tf.text]) {
+        [self dismissViewControllerAnimated:YES completion:^{
+            if (self.c == 2) {
+                OrderViewController *vc = [OrderViewController new];
+                [self.navi pushViewController:vc animated:YES];
+            } else {
+                ConsoleViewController *vc = [ConsoleViewController new];
+                [self.navi pushViewController:vc animated:YES];
+            }
+        }];
+    } else {
+        [SVProgressHUD showErrorWithStatus:@"密码错误"];
+    }
+    return YES;
 }
 
 - (IBAction)queren:(id)sender {

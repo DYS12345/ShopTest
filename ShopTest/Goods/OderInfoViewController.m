@@ -213,7 +213,6 @@
                                 };
         FBRequest *request1 = [FBAPI postWithUrlString:@"/shopping/confirm" requestDictionary:param delegate:self];
         [request1 startRequestSuccess:^(FBRequest *request, id result) {
-            NSLog(@"wdasd  %@", result);
             NSString *ridStr = result[@"data"][@"rid"];
             PayWayViewController *vc = [PayWayViewController new];
             vc.image = self.image;

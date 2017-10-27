@@ -81,13 +81,12 @@
     self.currentPage = @"1";
     NSDictionary *param = @{
                             @"page" : self.currentPage,
-                            @"size" : @(10),
+                            @"size" : @(50),
                             @"status" : @(0),
                             @"storage_id" : usermodel.storage_id
                             };
     FBRequest *request = [FBAPI postWithUrlString:@"/shopping/orders" requestDictionary:param delegate:self];
     [request startRequestSuccess:^(FBRequest *request, id result) {
-        NSLog(@"uiuwefbhb %@", result);
         self.modelAry = [OrderModel mj_objectArrayWithKeyValuesArray:result[@"data"][@"rows"]];
         self.modelAryl = [NSMutableArray arrayWithArray:self.modelAry];
         
@@ -136,7 +135,7 @@
     UserModel *userModel = [[UserModel findAll] lastObject];
     NSDictionary *param = @{
                             @"page" : @(++n),
-                            @"size" : @(10),
+                            @"size" : @(50),
                             @"status" : @(0),
                             @"storage_id" : userModel.storage_id
                             };

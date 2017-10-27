@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *zhifubaoStateBtn;
 @property (weak, nonatomic) IBOutlet UIButton *weixinStateBtn;
 @property (assign, nonatomic) NSInteger payWay; //1 weixin   2 zhifubao
+@property (weak, nonatomic) IBOutlet UIButton *cashStatusBtn;
 
 @end
 
@@ -41,6 +42,7 @@
     
     [self.weixinStateBtn dk_setImage:DKImagePickerWithNames(@"Selectedblack", @"red", @"red", @"SelectedGolden") forState:UIControlStateSelected];
     [self.zhifubaoStateBtn dk_setImage:DKImagePickerWithNames(@"Selectedblack", @"red", @"red", @"SelectedGolden") forState:UIControlStateSelected];
+    [self.cashStatusBtn dk_setImage:DKImagePickerWithNames(@"Selectedblack", @"red", @"red", @"SelectedGolden") forState:UIControlStateSelected];
     
     self.weixinStateBtn.selected = YES;
     self.weixinStateBtn.userInteractionEnabled = NO;
@@ -65,6 +67,8 @@
     self.zhifubaoStateBtn.userInteractionEnabled = NO;
     self.weixinStateBtn.selected = NO;
     self.weixinStateBtn.userInteractionEnabled = YES;
+    self.cashStatusBtn.selected = NO;
+    self.cashStatusBtn.userInteractionEnabled = YES;
 }
 
 - (IBAction)selectWeiXin:(id)sender {
@@ -73,6 +77,18 @@
     self.zhifubaoStateBtn.userInteractionEnabled = YES;
     self.weixinStateBtn.selected = YES;
     self.weixinStateBtn.userInteractionEnabled = NO;
+    self.cashStatusBtn.selected = NO;
+    self.cashStatusBtn.userInteractionEnabled = YES;
+}
+
+- (IBAction)selectCash:(id)sender {
+    self.payWay = 3;
+    self.cashStatusBtn.selected = YES;
+    self.cashStatusBtn.userInteractionEnabled = NO;
+    self.zhifubaoStateBtn.selected = NO;
+    self.zhifubaoStateBtn.userInteractionEnabled = YES;
+    self.weixinStateBtn.selected = NO;
+    self.weixinStateBtn.userInteractionEnabled = YES;
 }
 
 - (IBAction)otherClose:(id)sender {

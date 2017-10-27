@@ -40,13 +40,13 @@
                     <rect key="frame" x="0.0" y="643" width="1024" height="125"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YUJ-Nd-TB1">
-                            <rect key="frame" x="145" y="12" width="0.0" height="89"/>
+                            <rect key="frame" x="145" y="12" width="0.0" height="69"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JK0-R4-RHq">
-                            <rect key="frame" x="145" y="105" width="545" height="0.0"/>
+                            <rect key="frame" x="145" y="85" width="545" height="0.0"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -99,7 +99,7 @@
                         <constraint firstItem="JK0-R4-RHq" firstAttribute="top" secondItem="YUJ-Nd-TB1" secondAttribute="bottom" constant="4" id="lZ0-bn-9hs"/>
                         <constraint firstAttribute="bottom" secondItem="gOp-1o-9eM" secondAttribute="bottom" constant="20" id="pIi-Ps-vlS"/>
                         <constraint firstItem="JK0-R4-RHq" firstAttribute="leading" secondItem="YUJ-Nd-TB1" secondAttribute="leading" id="sPJ-f4-p0P"/>
-                        <constraint firstAttribute="bottom" secondItem="JK0-R4-RHq" secondAttribute="bottom" constant="20" id="tjP-AC-gLU"/>
+                        <constraint firstAttribute="bottom" secondItem="JK0-R4-RHq" secondAttribute="bottom" constant="40" id="tjP-AC-gLU"/>
                         <constraint firstAttribute="trailing" secondItem="PB5-PN-Sv0" secondAttribute="trailing" constant="316" id="yaC-9y-0M1"/>
                         <constraint firstItem="YUJ-Nd-TB1" firstAttribute="top" secondItem="fXc-5T-Jvu" secondAttribute="top" constant="12" id="zW3-4G-TOa"/>
                     </constraints>
