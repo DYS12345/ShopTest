@@ -31,6 +31,9 @@
 @property (weak, nonatomic) IBOutlet UIView *daYinSuccessView;
 @property (weak, nonatomic) IBOutlet UIView *printFailView;
 @property (weak, nonatomic) IBOutlet UIView *rePrintView;
+@property (weak, nonatomic) IBOutlet UIView *queRenZhongView;
+@property (weak, nonatomic) IBOutlet UIImageView *queRenLoadingImageView;
+@property (weak, nonatomic) IBOutlet UILabel *queRenTipLabel;
 
 @end
 
@@ -80,6 +83,17 @@
     self.zhengZaiDaYinView.hidden = YES;
     self.daYinSuccessView.hidden = YES;
     self.printFailView.hidden = YES;
+    self.queRenZhongView.hidden = YES;
+    
+    NSMutableArray *imageAry2 = [NSMutableArray array];
+    for (int i = 0; i<=20; i++) {
+        NSString *str = [NSString stringWithFormat:@"pay%04d", i];
+        UIImage *image = [UIImage imageNamed:str];
+        [imageAry2 addObject:image];
+    }
+    self.queRenLoadingImageView.animationImages = imageAry2;
+    self.queRenLoadingImageView.animationDuration = 4;
+    self.queRenLoadingImageView.animationRepeatCount = 0;
     
     NSMutableArray *imageAry = [NSMutableArray array];
     for (int i = 1; i<=60; i++) {
@@ -138,6 +152,8 @@
     [request1 startRequestSuccess:^(FBRequest *request, id result) {
         if (self.payWay == 3) {
             //loading图出现
+            self.queRenZhongView.hidden = NO;
+            [self.queRenLoadingImageView startAnimating];
             return;
         }
         NSString *str = result[@"data"][@"code_url"];
@@ -223,10 +239,10 @@
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         
-        WEAKSELF
         [request startRequestSuccess:^(FBRequest *request, id result) {
             NSDictionary * dataDic = [result objectForKey:@"data"];
             if (([[dataDic objectForKey:@"status"] isEqualToNumber:@10] | [[dataDic objectForKey:@"status"] isEqualToNumber:@16])) {
+                [self.queRenLoadingImageView stopAnimating];
                 self.successView.hidden = NO;
             } else {
             }
