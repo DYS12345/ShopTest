@@ -34,6 +34,7 @@
 @property (weak, nonatomic) IBOutlet UIView *queRenZhongView;
 @property (weak, nonatomic) IBOutlet UIImageView *queRenLoadingImageView;
 @property (weak, nonatomic) IBOutlet UILabel *queRenTipLabel;
+@property (nonatomic, assign) NSInteger payType;
 
 @end
 
@@ -140,18 +141,21 @@
     if (self.payWay == 1) {
        self.payWayLabel.text = @"微信扫描二维码付款";
         zhifufangshi = @"weichat";
+        self.payType = 2;
     } else if (self.payWay == 2) {
         self.payWayLabel.text = @"支付宝扫描二维码付款";
         zhifufangshi = @"alipay";
+        self.payType = 2;
     } else if (self.payWay == 3) {
         self.payWayLabel.text = @"现金支付";
         zhifufangshi = @"cash";
+        self.payType = 3;
     }
     
     NSDictionary *param = @{
                             @"rid" : self.rid,
                             @"payaway" : zhifufangshi,
-                            @"pay_type" : @(self.payWay)
+                            @"pay_type" : @(self.payType)
                             };
     FBRequest *request1 = [FBAPI postWithUrlString:@"/shopping/payed" requestDictionary:param delegate:self];
     [request1 startRequestSuccess:^(FBRequest *request, id result) {
