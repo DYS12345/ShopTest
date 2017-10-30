@@ -253,7 +253,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="376" height="50"/>
                                             <connections>
                                                 <action selector="selectCash:" destination="-1" eventType="touchUpInside" id="gd1-iw-UY2"/>
-                                                <action selector="selectZhifubao:" destination="-1" eventType="touchUpInside" id="1RK-cd-eUu"/>
                                             </connections>
                                         </button>
                                     </subviews>
