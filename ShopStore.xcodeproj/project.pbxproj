@@ -115,7 +115,7 @@
 		B2951A85DB31F2E9F65F2EC7 /* Pods_ShopTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShopTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8CD2C05903F8959F16CDD82 /* Pods-ShopTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShopTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShopTest/Pods-ShopTest.debug.xcconfig"; sourceTree = "<group>"; };
 		EF2119BB5311CF3176B51094 /* Pods-ShopTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShopTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShopTest/Pods-ShopTest.release.xcconfig"; sourceTree = "<group>"; };
-		F51A42081F565EE400D73497 /* ShopTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShopTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F51A42081F565EE400D73497 /* ShopStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShopStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F51A420C1F565EE400D73497 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F51A420E1F565EE400D73497 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F51A420F1F565EE400D73497 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -307,7 +307,7 @@
 		F51A42091F565EE400D73497 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F51A42081F565EE400D73497 /* ShopTest.app */,
+				F51A42081F565EE400D73497 /* ShopStore.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -661,9 +661,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F51A42071F565EE400D73497 /* ShopTest */ = {
+		F51A42071F565EE400D73497 /* ShopStore */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F51A421F1F565EE400D73497 /* Build configuration list for PBXNativeTarget "ShopTest" */;
+			buildConfigurationList = F51A421F1F565EE400D73497 /* Build configuration list for PBXNativeTarget "ShopStore" */;
 			buildPhases = (
 				2BB06E52ADA82F8E6291D691 /* [CP] Check Pods Manifest.lock */,
 				F51A42041F565EE400D73497 /* Sources */,
@@ -676,9 +676,9 @@
 			);
 			dependencies = (
 			);
-			name = ShopTest;
+			name = ShopStore;
 			productName = ShopTest;
-			productReference = F51A42081F565EE400D73497 /* ShopTest.app */;
+			productReference = F51A42081F565EE400D73497 /* ShopStore.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -692,13 +692,13 @@
 				TargetAttributes = {
 					F51A42071F565EE400D73497 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = QNKEA2Q4R9;
+						DevelopmentTeam = 7ET6PJMCHV;
 						LastSwiftMigration = 0830;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
-			buildConfigurationList = F51A42031F565EE400D73497 /* Build configuration list for PBXProject "ShopTest" */;
+			buildConfigurationList = F51A42031F565EE400D73497 /* Build configuration list for PBXProject "ShopStore" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -711,7 +711,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F51A42071F565EE400D73497 /* ShopTest */,
+				F51A42071F565EE400D73497 /* ShopStore */,
 			);
 		};
 /* End PBXProject section */
@@ -981,17 +981,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: TaiHuoniao(SHENZHEN) Science and Technology Company Limited (7ET6PJMCHV)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = QNKEA2Q4R9;
+				DEVELOPMENT_TEAM = 7ET6PJMCHV;
 				INFOPLIST_FILE = ShopTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dong.d3inP;
+				PRODUCT_BUNDLE_IDENTIFIER = com.taihuoniao.d3inp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "7ffadb17-03fc-4e9e-a512-878e8b684a38";
+				PROVISIONING_PROFILE_SPECIFIER = d3inP;
 				SWIFT_OBJC_BRIDGING_HEADER = "ShopTest/ShopTest-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -1005,17 +1006,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: TaiHuoniao(SHENZHEN) Science and Technology Company Limited (7ET6PJMCHV)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = QNKEA2Q4R9;
+				DEVELOPMENT_TEAM = 7ET6PJMCHV;
 				INFOPLIST_FILE = ShopTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dong.d3inP;
+				PRODUCT_BUNDLE_IDENTIFIER = com.taihuoniao.d3inp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "7ffadb17-03fc-4e9e-a512-878e8b684a38";
+				PROVISIONING_PROFILE_SPECIFIER = d3inP;
 				SWIFT_OBJC_BRIDGING_HEADER = "ShopTest/ShopTest-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -1073,17 +1075,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: TaiHuoniao(SHENZHEN) Science and Technology Company Limited (7ET6PJMCHV)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = QNKEA2Q4R9;
+				DEVELOPMENT_TEAM = 7ET6PJMCHV;
 				INFOPLIST_FILE = ShopTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dong.d3inP;
+				PRODUCT_BUNDLE_IDENTIFIER = com.taihuoniao.d3inp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "7ffadb17-03fc-4e9e-a512-878e8b684a38";
+				PROVISIONING_PROFILE_SPECIFIER = d3inP;
 				SWIFT_OBJC_BRIDGING_HEADER = "ShopTest/ShopTest-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -1093,7 +1095,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F51A42031F565EE400D73497 /* Build configuration list for PBXProject "ShopTest" */ = {
+		F51A42031F565EE400D73497 /* Build configuration list for PBXProject "ShopStore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F51A421D1F565EE400D73497 /* Debug */,
@@ -1103,7 +1105,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F51A421F1F565EE400D73497 /* Build configuration list for PBXNativeTarget "ShopTest" */ = {
+		F51A421F1F565EE400D73497 /* Build configuration list for PBXNativeTarget "ShopStore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F51A42201F565EE400D73497 /* Debug */,

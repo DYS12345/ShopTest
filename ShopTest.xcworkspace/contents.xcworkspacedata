@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:ShopTest.xcodeproj">
+      location = "group:/Users/dong/Desktop/ShopTestGit/ShopStore.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
