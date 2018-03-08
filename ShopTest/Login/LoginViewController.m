@@ -104,14 +104,18 @@ static NSString * const XMGPlacerholderColorKeyPath = @"_placeholderLabel.textCo
         FBRequest *request = [FBAPI postWithUrlString:@"/auth/login" requestDictionary:params delegate:self];
         [request startRequestSuccess:^(FBRequest *request, id result) {
             [SVProgressHUD dismiss];
-            NSLog(@"wqddqw %@", result);
-            NSDictionary *dataDict = [result objectForKey:@"data"];
-            UserModel *model = [UserModel mj_objectWithKeyValues:dataDict];
-            model.isLogin = YES;
-            model.psd = self.psdTF.text;
-            [model saveOrUpdate];
-            GoodsViewController *vc = [GoodsViewController new];
-            [self.navigationController pushViewController:vc animated:YES];
+//            NSLog(@"wqddqw %@", result);
+            if ([[NSString stringWithFormat:@"%@", result[@"is_error"]] isEqualToString:@"1"]) {
+                [SVProgressHUD showInfoWithStatus:result[@"message"]];
+            } else {
+                NSDictionary *dataDict = [result objectForKey:@"data"];
+                UserModel *model = [UserModel mj_objectWithKeyValues:dataDict];
+                model.isLogin = YES;
+                model.psd = self.psdTF.text;
+                [model saveOrUpdate];
+                GoodsViewController *vc = [GoodsViewController new];
+                [self.navigationController pushViewController:vc animated:YES];
+            }
         } failure:^(FBRequest *request, NSError *error) {
             [SVProgressHUD dismiss];
         }];

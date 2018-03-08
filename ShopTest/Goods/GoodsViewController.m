@@ -264,6 +264,7 @@
         self.selectedTag = @"";
     }
     UserModel *userModel = [[UserModel findAll] lastObject];
+    NSLog(@"dasdasdsa %@", [UserModel findAll]);
     NSDictionary *param = @{
                             @"page" : self.currentPage,
                             @"size" : @(16),
@@ -273,6 +274,7 @@
                             };
     FBRequest *request = [FBAPI postWithUrlString:@"/scene_scene/product_list" requestDictionary:param delegate:self];
     [request startRequestSuccess:^(FBRequest *request, id result) {
+        NSLog(@"sdasdsadsa %@", result);
         [self.collectionView.mj_header endRefreshing];
         self.currentPage = result[@"data"][@"current_page"];
         self.total_rows = result[@"data"][@"total_rows"];
