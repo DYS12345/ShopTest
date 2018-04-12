@@ -105,13 +105,17 @@ static NSString * const XMGPlacerholderColorKeyPath = @"_placeholderLabel.textCo
         [request startRequestSuccess:^(FBRequest *request, id result) {
             [SVProgressHUD dismiss];
             NSLog(@"wqddqw %@", result);
-            NSDictionary *dataDict = [result objectForKey:@"data"];
-            UserModel *model = [UserModel mj_objectWithKeyValues:dataDict];
-            model.isLogin = YES;
-            model.psd = self.psdTF.text;
-            [model saveOrUpdate];
-            GoodsViewController *vc = [GoodsViewController new];
-            [self.navigationController pushViewController:vc animated:YES];
+            if ([result[@"success"] integerValue] == 1) {
+                NSDictionary *dataDict = [result objectForKey:@"data"];
+                UserModel *model = [UserModel mj_objectWithKeyValues:dataDict];
+                model.isLogin = YES;
+                model.psd = self.psdTF.text;
+                [model saveOrUpdate];
+                GoodsViewController *vc = [GoodsViewController new];
+                [self.navigationController pushViewController:vc animated:YES];
+            } else {
+                [SVProgressHUD showInfoWithStatus:[NSString stringWithFormat:@"%@", result[@"message"]]];
+            }
         } failure:^(FBRequest *request, NSError *error) {
             [SVProgressHUD dismiss];
         }];

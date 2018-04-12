@@ -117,8 +117,10 @@
     NSDictionary *param = @{
                             @"id" : userModel.storage_id
                             };
+    NSLog(@"sadasdas  %@", userModel.storage_id);
     FBRequest *request = [FBAPI postWithUrlString:@"/scene_scene/view" requestDictionary:param delegate:self];
     [request startRequestSuccess:^(FBRequest *request, id result) {
+        NSLog(@"sadasdas  %@", result);
         self.menuBtn.userInteractionEnabled = YES;
         [self.tagsAry removeAllObjects];
         [self.tagsAry addObjectsFromArray:result[@"data"][@"product_tags"]];
