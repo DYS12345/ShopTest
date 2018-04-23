@@ -21,6 +21,7 @@
 #import "MJRefresh.h"
 #import "DKNightVersion.h"
 #import "PrintViewController.h"
+#import "SVProgressHUD.h"
 
 @interface OrderViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -40,6 +41,7 @@
 @property (nonatomic, strong) NSMutableArray *orderDetailModelAryl; //中间变量
 @property (nonatomic, copy) NSString *currentPage;
 @property (nonatomic, copy) NSString *total_rows;
+@property (nonatomic, assign) NSInteger scrollDistance;
 
 @end
 
@@ -86,7 +88,9 @@
                             @"storage_id" : usermodel.storage_id
                             };
     FBRequest *request = [FBAPI postWithUrlString:@"/shopping/orders" requestDictionary:param delegate:self];
+    [SVProgressHUD show];
     [request startRequestSuccess:^(FBRequest *request, id result) {
+        [SVProgressHUD dismiss];
         self.modelAry = [OrderModel mj_objectArrayWithKeyValuesArray:result[@"data"][@"rows"]];
         self.modelAryl = [NSMutableArray arrayWithArray:self.modelAry];
         
@@ -108,11 +112,11 @@
                 [self.orderDetailModelAry addObject:orderDetailModel];
                 self.orderDetailModelAryl = [NSMutableArray arrayWithArray:self.orderDetailModelAry];
             } failure:^(FBRequest *request, NSError *error) {
-                
             }];
         }
         
     } failure:^(FBRequest *request, NSError *error) {
+        [SVProgressHUD dismiss];
     }];
 }
 
@@ -278,6 +282,40 @@
     return cell;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.row == 0) {
+        return 40;
+    }
+    if (self.selectedN != 0) {
+        if (indexPath.row == self.selectedN) {
+            return 710/2+50;
+        }
+    }
+    return 50;
+}
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    if (scrollView.contentOffset.y - self.scrollDistance >= 400) {
+        self.scrollDistance = scrollView.contentOffset.y;
+        for (int i = 1; i<self.modelAryl.count+1; i++) {
+            OrderTableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+            cell.pullClickBtn.selected = NO;
+            cell.pullBtn.selected = NO;
+        }
+        self.selectedN = 0;
+        [self.tableView reloadData];
+    } else if (scrollView.contentOffset.y - self.scrollDistance <= -400) {
+        self.scrollDistance = scrollView.contentOffset.y;
+        for (int i = 1; i<self.modelAryl.count+1; i++) {
+            OrderTableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+            cell.pullClickBtn.selected = NO;
+            cell.pullBtn.selected = NO;
+        }
+        self.selectedN = 0;
+        [self.tableView reloadData];
+    }
+}
+
 -(void)print:(UIButton*)sender{
     OrderModel *model = self.modelAryl[sender.tag-1];
     PrintViewController *vc = [PrintViewController new];
@@ -319,18 +357,6 @@
         self.selectedN = 0;
     }
     [self.tableView reloadData];
-}
-
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row == 0) {
-        return 40;
-    }
-    if (self.selectedN != 0) {
-        if (indexPath.row == self.selectedN) {
-            return 710/2+50;
-        }
-    }
-    return 50;
 }
 
 @end
