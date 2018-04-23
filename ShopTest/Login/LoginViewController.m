@@ -108,11 +108,17 @@ static NSString * const XMGPlacerholderColorKeyPath = @"_placeholderLabel.textCo
             if ([result[@"success"] integerValue] == 1) {
                 NSDictionary *dataDict = [result objectForKey:@"data"];
                 UserModel *model = [UserModel mj_objectWithKeyValues:dataDict];
-                model.isLogin = YES;
-                model.psd = self.psdTF.text;
-                [model saveOrUpdate];
-                GoodsViewController *vc = [GoodsViewController new];
-                [self.navigationController pushViewController:vc animated:YES];
+                if (model.storage_id.length == 0) {
+                    [SVProgressHUD showInfoWithStatus:@"地盘ID未关联"];
+                } else {
+                    NSDictionary *dataDict = [result objectForKey:@"data"];
+                    UserModel *model = [UserModel mj_objectWithKeyValues:dataDict];
+                    model.isLogin = YES;
+                    model.psd = self.psdTF.text;
+                    [model saveOrUpdate];
+                    GoodsViewController *vc = [GoodsViewController new];
+                    [self.navigationController pushViewController:vc animated:YES];
+                }
             } else {
                 [SVProgressHUD showInfoWithStatus:[NSString stringWithFormat:@"%@", result[@"message"]]];
             }

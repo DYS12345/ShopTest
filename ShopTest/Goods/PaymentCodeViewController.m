@@ -35,6 +35,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *queRenLoadingImageView;
 @property (weak, nonatomic) IBOutlet UILabel *queRenTipLabel;
 
+
 @end
 
 @implementation PaymentCodeViewController
@@ -86,7 +87,7 @@
     self.queRenZhongView.hidden = YES;
     
     NSMutableArray *imageAry2 = [NSMutableArray array];
-    for (int i = 0; i<=20; i++) {
+    for (int i = 1; i<=20; i++) {
         NSString *str = [NSString stringWithFormat:@"pay%04d", i];
         UIImage *image = [UIImage imageNamed:str];
         [imageAry2 addObject:image];
@@ -156,6 +157,7 @@
             [self.queRenLoadingImageView startAnimating];
             return;
         }
+        NSLog(@"sasdjkk  %@", result);
         NSString *str = result[@"data"][@"code_url"];
         self.qtCodeImageView.image = [self qrImageForString:str imageSize:200 logoImageSize:50];
     } failure:^(FBRequest *request, NSError *error) {
